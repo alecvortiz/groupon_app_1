@@ -24,6 +24,7 @@ class WelcomeController < ApplicationController
   	@logistics_manager = User.where(job_title: "Logistics Manager")
   	@pretoria_sales = User.where(job_title: 'Pretoria Sales')
   	@pretoria_manager = User.where(job_title: 'Pretoria Sales Manager')
+    @product_designer = User.where(job_title: 'Product Designer')
   	@PRM = User.where(job_title: 'PRM')
   	@PRM_manager = User.where(job_title: 'PRM Manager')
   	@QA = User.where(job_title: 'QA')
