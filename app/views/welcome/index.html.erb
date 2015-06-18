@@ -1,12 +1,15 @@
 <h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+
 <%= link_to 'Groupon, South Africa Roster' , profiles_path %>
 <br/>
 
 
 <!-- role sensitive -->	
-	<%= link_to 'Send Appraisals' , root_path  %>
-		<% UserMailer.email.deliver %>
+<% @users.each do |user| %>
+	<% UserMailer.email(user).deliver_now %>
+<% end %>
+	
+
 	
 
 	
