@@ -4,22 +4,22 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>It's appraisal time!, <%= @reciever.first_name %> <%= @reciever.last_name %></h1>
+    <h1>It's appraisal time!, <%= @receiver.first_name %> <%= @receiver.last_name %></h1>
     <p>
       Please fill out the following surveys 
     <br>
     </p>
     <p>
 
-    <% if @reciever.job_title == 'Sales Person' %>
+    <% if @receiver.job_title == 'Sales Person' %>
       <%= @url_salesperson_peer %>
     <% end %>
 
-    <% if @reciever.job_title == 'Sales Intern' %>
+    <% if @receiver.job_title == 'Sales Intern' %>
       <%= @url_salesperson_subordinate %>
     <% end %>
 
-    <% if @reciever.job_title == 'Sales Manager' %>
+    <% if @receiver.job_title == 'Sales Manager' %>
       <%= @url_salesperson_supervisor %>
     <% end %>
 
