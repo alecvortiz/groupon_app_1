@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'templates/index'
+
+  get 'templates/show'
+
+  get 'templates/create'
+
+  get 'templates/destroy'
+
   get 'welcome/index'
 
   devise_for :users, :controllers => { registrations: 'user/registrations' }
