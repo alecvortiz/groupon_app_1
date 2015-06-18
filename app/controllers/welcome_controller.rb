@@ -30,10 +30,10 @@ class WelcomeController < ApplicationController
   	@QA = User.where(job_title: 'QA')
   	@risk_manager = User.where(job_title: 'Risk Manager')
   	@sales_manager = User.where(job_title: 'Sales Manager')
- 	@strategic_accounts = User.where(job_title: 'Strategic Accounts')
- 	@telesales = User.where(job_title: 'Telesales')
- 	@telesales_manager = User.where(job_title: 'Telesales Manager')
- 	@travel = User.where(job_title: 'Travel')
+ 	  @strategic_accounts = User.where(job_title: 'Strategic Accounts')
+    @telesales = User.where(job_title: 'Telesales')
+  	@telesales_manager = User.where(job_title: 'Telesales Manager')
+ 	  @travel = User.where(job_title: 'Travel')
 
   end
 end
