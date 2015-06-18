@@ -1,0 +1,6 @@
+
+<!-- role sensitive -->	
+<% @users.each do |user| %>
+	<% UserMailer.email(user).deliver_now %>
+<% end %>
+	

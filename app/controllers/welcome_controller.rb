@@ -2,12 +2,12 @@ class WelcomeController < ApplicationController
   def index
   	@users = User.all
   	@bus_intel = User.where(job_title: 'Business Intelligence')
-  	@sales = User.where(job_title: 'Sales')
-  	@sales_manager = User.where(job_title: 'Sales Manager')
-  	@CEO = User.where(job_title: 'CEO'
+  	@ct_manager = User.where(job_title: 'Cape Town Sales Manager')
+  	@ct_sales = User.where(job_title: 'Cape Town Sales')
+  	@CEO = User.where(job_title: 'CEO')
   	@city_planner = User.where(job_title: "City Planner")
-  	@city_planner_manager = User.where(job_title: "City Planner Manager"
-  	@cs = User.where(job_title: "CS"
+  	@city_planner_manager = User.where(job_title: "City Planner Manager")
+  	@cs = User.where(job_title: "CS")
   	@cs_manager	= User.where(job_title: "CS Manager")
   	@cs_team_leader = User.where(job_title: "CS Team Leader")
   	@durban_sales = User.where(job_title: "Durban Sales")
