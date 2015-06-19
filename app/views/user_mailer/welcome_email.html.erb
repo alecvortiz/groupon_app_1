@@ -11,21 +11,178 @@
     </p>
     <p>
 
-    <% if @user.job_title == 'Sales Person' %>
-      <%= @url_salesperson_peer %>
+    <% if @user.job_title == 'Business Intelligence' %>
+      <%= @url_busintel_peer %>
     <% end %>
 
-    <% if @user.job_title == 'Sales Intern' %>
-      <%= @url_salesperson_subordinate %>
+    <% if @user.job_title == 'Cape Town Sales Manager' %>
+      <%= @url_ct_sales_supervisor %>
     <% end %>
 
-    <% if @user.job_title == 'Sales Manager' %>
-      <%= @url_salesperson_supervisor %>
+    <% if @user.job_title == 'Cape Town Sales' %>
+      <%= @url_ct_sales_peer %>
+      <%= @url_ct_sales_manager_subordinate %>
+    <% end %>
+
+    <% if @user.job_title == 'CEO' %>
+      <%= @url_manager_supervisor %>
+    <% end %>
+
+     <% if @user.job_title == 'City Planner Manager' %>
+      <%= @url_city_planner_supervisor %>
+    <% end %>
+
+    <% if @user.job_title == 'City Planner' %>
+      <%= @url_city_planner_peer %>
+      <%= @url_city_planner_manager_subordinate %>
+    <% end %>
+
+    <% if @user.job_title == 'CS' %>
+      <%= @url_CS_peer %>
+      <%= @url_CS_team_leader_subordinate %>
+    <% end %>
+
+    <% if @user.job_title == 'CS Manager' %>
+      <%= @url_CS_supervisor %>
+    <% end %>
+
+    <% if @user.job_title == 'CS Team Leader' %>
+      <%= @url_CS_team_leader_peer %>
+      <%= @url_CS_supervisor %>
+    <% end %>
+
+    <% if @user.job_title == 'Durban Sales' %>
+      <%= @url_durban_city_manager_subordinate %>
+      <%= @url_durban_sales_peer %>
+    <% end %>
+
+    <% if @user.job_title == 'Durban City Manager' %>
+      <%= @url_durban_sales_supervisor %>
+    <% end %>
+
+    <% if @user.job_title == 'Editorial' %>
+      <%= @url_editorial_peer %>
+      <%= @url_editorial_manager_subordinate %>
+    <% end %>
+
+    <% if @user.job_title == 'Editorial Manager' %>
+      <%= @url_editorial_superior %>
+    <% end %>
+
+    <% if @user.job_title == 'Finance' %>
+      <%= @url_finance_peer %>
+    <% end %>
+
+    <% if @user.job_title == 'Goods Administrator' %>
+      <%= @url_goods_admin_peer %>
+      <%= @url_goods_manager_subordinate %>
+    <% end %>
+
+    <% if @user.job_title == 'Goods Manager' %>
+      <%= @url_goods_admin_supervisor %>
+      <%= @url_goods_sales_supervisor %>
+    <% end %>
+
+    <% if @user.job_title == 'Goods Sales' %>
+      <%= @url_goods_manager_subordinate %>
+      <%= @url_goods_sales_peer %>
     <% end %>
 
     <% if @user.job_title == 'HR Manager' %>
-      <%= @url_salesperson_supervisor %>
+      
     <% end %>
+
+    <% if @user.job_title == 'Johannesburg Sales' %>
+      <%= @url_johannesburg_sales_peer %>
+    <% end %>
+
+    <% if @user.job_title == 'Logistics' %>
+      <%= @url_logistics_peer %>
+      <%= @url_logistics_manager_subordinate %>
+    <% end %>
+
+     <% if @user.job_title == 'Logistics Manager' %>
+      <%= @url_logistics_supervisor %>
+      <%= @url_logistics_manager_peer %>
+    <% end %>
+
+    <% if @user.job_title == 'Pretoria Sales' %>
+      <%= @url_pretoria_sales_peer %>
+      <%= @url_pretoria_sales_manager_subordinate %>
+    <% end %>
+
+    <% if @user.job_title == 'Pretoria Sales Manager' %>
+      <%= @url_pretoria_sales_supervisor %>
+    <% end %>
+
+    <% if @user.job_title == 'Product Designer' %>
+      <!-- <%= @url_pretoria_sales_supervisor %> -->
+      <% @reviewee = @arr.sample %>
+
+      <% while @reviewee == @user %>
+        <% @reviewee = @arr.sample %>
+      <% end %>
+
+      <% @arr.delete(@reviewee) %>
+
+      fill this form out for <%= @reviewee.first_name %> <%= @reviewee.last_name %>
+      <%= @arr %>
+      <%= @url_salesperson_peer %>
+    <% end %>
+
+    <% if @user.job_title == 'PRM' %>
+      <%= @url_PRM_peer %>
+      <%= @url_PRM_manager_subordinate %>
+    <% end %>
+
+    <% if @user.job_title == 'PRM Manager' %>
+      <%= @url_PRM_supervisor %>
+      <%= @url_QA_supervisor %>
+      <%= @url_PRM_manager_peer %>
+    <% end %>
+
+    <% if @user.job_title == 'QA' %>
+      <%= @url_QA_peer %>
+      <%= @url_PRM_manager_subordinate %>
+    <% end %>
+
+    <% if @user.job_title == 'Risk Manager' %>
+      
+    <% end %>
+
+    <% if @user.job_title == 'Sales Manager' %>
+      <%= @url_pretoria_sales_supervisor %>
+      <%= @url_pretoria_sales_manager_supervisor %>
+      <%= @url_johannesburg_sales_supervisor %>
+      <%= @url_goods_sales_supervisor%>
+      <%= @url_goods_manager_supevisor%>
+      <%= @url_durban_sales_supervisor %>
+      <%= @url_durban_city_manager_supervisor %>
+      <%= @url_ct_sales_supervisor %>
+      <%= @url_ct_sales_manager_supervisor %>
+      <%= @url_telesales_supervisor %>
+      <%= @url_telesales_manager_supervisor%>
+    <% end %>
+
+    <% if @user.job_title == 'Strategic Accounts' %>
+      <%= @url_strategic_accounts_peer %>  
+    <% end %>
+
+    <% if @user.job_title == 'Telesales' %>
+      <%= @url_telesales_peer %>
+      <%= @url_telesales_manager_subordinate %>
+    <% end %>
+
+    <% if @user.job_title == 'Telesales Manager' %>
+      <%= @url_telesales_supervisor %>
+    <% end %>
+
+    <% if @user.job_title == 'Travel' %>
+      <%= @url_travel_peer %>
+    <% end %>
+
+
+
 
     </p>
     <p>Goooooooo Groupon! (olivia)</p>

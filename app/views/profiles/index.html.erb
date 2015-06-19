@@ -1,8 +1,9 @@
-<h1>Profiles#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<h1>Groupon SA Roster</h1>
+
 
 <% @users.each do |user| %>
 	<% name = user.first_name + " " + user.last_name %>
 	<%= link_to name, profile_path(user) %> - <%= user.job_title %>
 	<br/>
+
 <% end %>

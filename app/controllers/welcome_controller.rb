@@ -1,5 +1,10 @@
 class WelcomeController < ApplicationController
   def index
+
+  end
+
+  def sent
+
   	@users = User.all
   	@bus_intel = User.where(job_title: 'Business Intelligence')
   	@ct_manager = User.where(job_title: 'Cape Town Sales Manager')
@@ -34,6 +39,7 @@ class WelcomeController < ApplicationController
     @telesales = User.where(job_title: 'Telesales')
   	@telesales_manager = User.where(job_title: 'Telesales Manager')
  	  @travel = User.where(job_title: 'Travel')
-
+ 	
   end
+  
 end

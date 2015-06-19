@@ -4,3 +4,117 @@
 	<% UserMailer.email(user).deliver_now %>
 <% end %>
 	
+	 @bus_intel_arr = []
+	    @bus_intel.each do |person|
+	      @bus_intel_arr << (person)
+	    end
+	    @bus_intel_arr.shuffle!
+
+
+	    @ct_sales_arr = []
+	    @ct_sales.each do |person|
+	      @ct_sales_arr << (person)
+	    end
+	    @ct_sales_arr.shuffle!
+
+	    @CEO_arr = []
+	    @CEO.each do |person|
+	      @CEO_arr << (person)
+	    end
+	    @CEO_arr.shuffle!
+
+	    @city_planner_arr = []
+	    @city_planner.each do |person|
+	      @city_planner_arr << (person)
+	    end
+	    @city_planner_arr.shuffle!
+
+	    @cs_arr = []
+	    @cs.each do |person|
+	      @cs_arr << (person)
+	    end
+	    @cs_arr.shuffle!
+
+	    @durban_sales_arr = []
+	    @durban_sales.each do |person|
+	      @durban_sales_arr << (person)
+	    end
+	    @durban_sales_arr.shuffle!
+
+	    @editorial_arr = []
+	    @editorial.each do |person|
+	      @editorial_arr << (person)
+	    end
+	    @editorial_arr.shuffle!
+
+	    @finance_arr = []
+	    @finance.each do |person|
+	      @finance_arr << (person)
+	    end
+	    @finance_arr.shuffle!
+
+	    @goods_administrator_arr = []
+	    @goods_administrator.each do |person|
+	      @goods_administrator_arr << (person)
+	    end
+	    @goods_administrator_arr.shuffle!
+
+	    @goods_sales_arr = []
+	    @goods_sales.each do |person|
+	      @goods_sales_arr << (person)
+	    end
+	    @goods_sales_arr.shuffle!
+
+	    @johannesburg_sales_arr = []
+	    @johannesburg_sales.each do |person|
+	      @johannesburg_sales_arr << (person)
+	    end
+	    @johannesburg_sales_arr.shuffle!
+
+	    @logistics_arr = []
+	    @logistics.each do |person|
+	      @logistics_arr << (person)
+	    end
+	    @logistics_arr.shuffle!
+
+	    @pretoria_sales_arr = []
+	    @pretoria_sales.each do |person|
+	      @pretoria_sales_arr << (person)
+	    end
+	    @pretoria_sales_arr.shuffle!
+
+	    @product_designer_arr = []
+	    @product_designer.each do |person|
+	      @product_designer_arr << (person)
+	    end
+	    @product_designer_arr.shuffle!
+
+	    @PRM_arr = []
+	    @PRM.each do |person|
+	      @PRM_arr << (person)
+	    end
+	    @PRM_arr.shuffle!
+
+	    @QA_arr = []
+	    @QA.each do |person|
+	      @QA_arr << (person)
+	    end
+	    @QA_arr.shuffle!
+
+	    @strategic_accounts_arr = []
+	    @strategic_accounts.each do |person|
+	      @strategic_accounts_arr << (person)
+	    end
+	    @strategic_accounts_arr.shuffle!
+
+	    @telesales_arr = []
+	    @telesales.each do |person|
+	      @telesales_arr << (person)
+	    end
+	    @telesales_arr.shuffle!
+
+	    @travel_arr = []
+	    @travel.each do |person|
+	      @travel_arr << (person)
+	    end
+	    @travel_arr.shuffle!
