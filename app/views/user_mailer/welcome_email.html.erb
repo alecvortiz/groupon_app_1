@@ -4,7 +4,7 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>It's appraisal time!, <%= @user.first_name %> <%= @user.last_name %></h1>
+    <h1>It's appraisal time, <%= @user.first_name %> <%= @user.last_name %>!</h1>
     <p>
       Please fill out the following surveys 
     <br>
@@ -115,19 +115,18 @@
       <%= @url_pretoria_sales_supervisor %>
     <% end %>
 
-    <% if @user.job_title == 'Product Designer' %>
-      <!-- <%= @url_pretoria_sales_supervisor %> -->
-      <% @reviewee = @arr.sample %>
+    <% if @user.job_title == 'Product Designer' %> 
+      <% @reviewee = @product_designer_arr.sample %>
 
       <% while @reviewee == @user %>
-        <% @reviewee = @arr.sample %>
+        <% @reviewee = @product_designer_arr[(Time.now.to_i) % (@product_designer_arr.length)] %>
       <% end %>
 
-      <% @arr.delete(@reviewee) %>
+      <% @product_designer_arr.delete(@reviewee) %>
 
       fill this form out for <%= @reviewee.first_name %> <%= @reviewee.last_name %>
-      <%= @arr %>
-      <%= @url_salesperson_peer %>
+    
+      <%= @url_pretoria_sales_supervisor %>
     <% end %>
 
     <% if @user.job_title == 'PRM' %>
@@ -185,6 +184,6 @@
 
 
     </p>
-    <p>Goooooooo Groupon! (olivia)</p>
+    
   </body>
 </html>
