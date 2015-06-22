@@ -77,6 +77,11 @@
 	    <% @logistics.each do |person| %>
 	      <% @logistics_arr << (person) %>
 	    <% end %>
+
+	    <% @logistics_manager_arr = [] %>
+	    <% @logistics_manager.each do |person| %>
+	      <% @logistics_manager_arr << (person) %>
+	    <% end %>
 	    
 
 	    <% @pretoria_sales_arr = [] %>
@@ -121,11 +126,13 @@
 	    <% end %>
 	    
 
-	    <% @arr = [@bus_intel_arr, @ct_sales_arr, @CEO_arr, @city_planner_arr, @cs_arr,@durban_sales_arr, @editorial_arr, @finance_arr, @goods_administrator_arr,@johannesburg_sales_arr, @logistics_arr, @pretoria_sales_arr, @PRM_arr, @QA_arr, @strategic_accounts_arr, @telesales_arr, @travel_arr, @product_designer_arr, @cs_tl_arr] %>
+	    <% @arr = [@bus_intel_arr, @ct_sales_arr, @CEO_arr, @city_planner_arr, @cs_arr, @durban_sales_arr, @editorial_arr, @finance_arr, @goods_administrator_arr, @johannesburg_sales_arr, @logistics_arr, @pretoria_sales_arr, @PRM_arr, @QA_arr, @strategic_accounts_arr, @telesales_arr, @travel_arr, @product_designer_arr, @cs_tl_arr, @goods_sales_arr, @logistics_manager_arr] %>
 
 
 <% UserMailer.email(blake, @arr).deliver_now %>
 <% UserMailer.email(olivia, @arr).deliver_now %>
 <% UserMailer.email(sophie, @arr).deliver_now %>
+
+
 
 	

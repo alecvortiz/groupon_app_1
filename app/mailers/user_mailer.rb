@@ -26,7 +26,9 @@ class UserMailer < ApplicationMailer
    		@telesales_arr = arr[15] 
    		@travel_arr = arr[16]
    		@product_designer_arr = arr[17]
-         @cs_tl = arr[18]
+         @cs_tl_arr = arr[18]
+         @goods_sales_arr = arr[19]
+         @logistics_manager_arr = arr[20]
    		
 	  
 
