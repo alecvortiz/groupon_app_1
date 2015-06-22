@@ -1,6 +1,9 @@
 class WelcomeController < ApplicationController
-  def index
 
+  include UsersHelper
+  
+
+  def index
   end
 
   def sent
@@ -14,7 +17,7 @@ class WelcomeController < ApplicationController
   	@city_planner_manager = User.where(job_title: "City Planner Manager")
   	@cs = User.where(job_title: "CS")
   	@cs_manager	= User.where(job_title: "CS Manager")
-  	@cs_team_leader = User.where(job_title: "CS Team Leader")
+  	@cs_tl = User.where(job_title: "CS Team Leader")
   	@durban_sales = User.where(job_title: "Durban Sales")
   	@durban_manager = User.where(job_title: "Durban City Manager")
   	@editorial = User.where(job_title: 'Editorial')
@@ -39,7 +42,7 @@ class WelcomeController < ApplicationController
     @telesales = User.where(job_title: 'Telesales')
   	@telesales_manager = User.where(job_title: 'Telesales Manager')
  	  @travel = User.where(job_title: 'Travel')
-    
+
  	
   end
   

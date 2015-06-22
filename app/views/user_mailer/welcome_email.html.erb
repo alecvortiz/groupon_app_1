@@ -4,23 +4,28 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
+
+
     <h1>It's appraisal time, <%= @user.first_name %> <%= @user.last_name %>!</h1>
-    <p>
-      Please fill out the following surveys 
-    <br>
-    </p>
+   
     <p>
 
     <% if @user.job_title == 'Business Intelligence' %>
+      <% @reviewee = peer_forms(@bus_intel_arr) %><br/>
+      Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
       <%= @url_busintel_peer %>
     <% end %>
 
     <% if @user.job_title == 'Cape Town Sales Manager' %>
+      Fill this form out for all members of your sales team
       <%= @url_ct_sales_supervisor %>
     <% end %>
 
     <% if @user.job_title == 'Cape Town Sales' %>
+      <% @reviewee = peer_forms(@ct_sales_arr) %><br/>
+      Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
       <%= @url_ct_sales_peer %>
+
       <%= @url_ct_sales_manager_subordinate %>
     <% end %>
 
@@ -33,12 +38,18 @@
     <% end %>
 
     <% if @user.job_title == 'City Planner' %>
+      <% @reviewee = peer_forms(@city_planner_arr) %><br/>
+      Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
       <%= @url_city_planner_peer %>
+
       <%= @url_city_planner_manager_subordinate %>
     <% end %>
 
     <% if @user.job_title == 'CS' %>
+      <% @reviewee = peer_forms(@cs_arr) %><br/>
+      Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
       <%= @url_CS_peer %>
+
       <%= @url_CS_team_leader_subordinate %>
     <% end %>
 
@@ -47,12 +58,17 @@
     <% end %>
 
     <% if @user.job_title == 'CS Team Leader' %>
+      <% @reviewee = peer_forms(@cs_tl_arr) %><br/>
+      Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
       <%= @url_CS_team_leader_peer %>
       <%= @url_CS_supervisor %>
     <% end %>
 
     <% if @user.job_title == 'Durban Sales' %>
+      <% @reviewee = peer_forms(@durban_sales_arr) %><br/>
+      Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
       <%= @url_durban_city_manager_subordinate %>
+
       <%= @url_durban_sales_peer %>
     <% end %>
 
@@ -61,20 +77,28 @@
     <% end %>
 
     <% if @user.job_title == 'Editorial' %>
+      <% @reviewee = peer_forms(@editorial_arr) %><br/>
+      Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
       <%= @url_editorial_peer %>
+
       <%= @url_editorial_manager_subordinate %>
     <% end %>
 
     <% if @user.job_title == 'Editorial Manager' %>
-      <%= @url_editorial_superior %>
+      <%= @url_editorial_supervisor %>
     <% end %>
 
     <% if @user.job_title == 'Finance' %>
+      <% @reviewee = peer_forms(@finance_arr) %><br/>
+      Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
       <%= @url_finance_peer %>
     <% end %>
 
     <% if @user.job_title == 'Goods Administrator' %>
+      <% @reviewee = peer_forms(@goods_administrator_arr) %><br/>
+      Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
       <%= @url_goods_admin_peer %>
+
       <%= @url_goods_manager_subordinate %>
     <% end %>
 
@@ -84,8 +108,11 @@
     <% end %>
 
     <% if @user.job_title == 'Goods Sales' %>
-      <%= @url_goods_manager_subordinate %>
+      <% @reviewee = peer_forms(@goods_sales_arr) %><br/>
+      Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
       <%= @url_goods_sales_peer %>
+      
+      <%= @url_goods_manager_subordinate %>  
     <% end %>
 
     <% if @user.job_title == 'HR Manager' %>
@@ -93,11 +120,16 @@
     <% end %>
 
     <% if @user.job_title == 'Johannesburg Sales' %>
+      <% @reviewee = peer_forms(@johannesburg_sales_arr) %><br/>
+      Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
       <%= @url_johannesburg_sales_peer %>
     <% end %>
 
     <% if @user.job_title == 'Logistics' %>
+      <% @reviewee = peer_forms(@logistics_arr) %><br/>
+      Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
       <%= @url_logistics_peer %>
+
       <%= @url_logistics_manager_subordinate %>
     <% end %>
 
@@ -107,7 +139,10 @@
     <% end %>
 
     <% if @user.job_title == 'Pretoria Sales' %>
+      <% @reviewee = peer_forms(@pretoria_sales_arr) %><br/>
+      Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
       <%= @url_pretoria_sales_peer %>
+
       <%= @url_pretoria_sales_manager_subordinate %>
     <% end %>
 
@@ -116,21 +151,17 @@
     <% end %>
 
     <% if @user.job_title == 'Product Designer' %> 
-      <% @reviewee = @product_designer_arr.sample %>
+      <% @reviewee = peer_forms(@product_designer_arr) %><br/>
+      Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
+      <%= @url_product_designer_peer %>
 
-      <% while @reviewee == @user %>
-        <% @reviewee = @product_designer_arr[(Time.now.to_i) % (@product_designer_arr.length)] %>
-      <% end %>
-
-      <% @product_designer_arr.delete(@reviewee) %>
-
-      fill this form out for <%= @reviewee.first_name %> <%= @reviewee.last_name %>
-    
-      <%= @url_pretoria_sales_supervisor %>
     <% end %>
 
     <% if @user.job_title == 'PRM' %>
+      <% @reviewee = peer_forms(@PRM_arr) %><br/>
+      Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
       <%= @url_PRM_peer %>
+
       <%= @url_PRM_manager_subordinate %>
     <% end %>
 
@@ -141,7 +172,10 @@
     <% end %>
 
     <% if @user.job_title == 'QA' %>
+      <% @reviewee = peer_forms(@QA_arr) %><br/>
+      Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
       <%= @url_QA_peer %>
+
       <%= @url_PRM_manager_subordinate %>
     <% end %>
 
@@ -164,11 +198,16 @@
     <% end %>
 
     <% if @user.job_title == 'Strategic Accounts' %>
+    <% @reviewee = peer_forms(@strategic_accounts_arr) %><br/>
+    Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
       <%= @url_strategic_accounts_peer %>  
     <% end %>
 
     <% if @user.job_title == 'Telesales' %>
+      <% @reviewee = peer_forms(@telesales_arr) %><br/>
+      Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
       <%= @url_telesales_peer %>
+
       <%= @url_telesales_manager_subordinate %>
     <% end %>
 
@@ -177,6 +216,8 @@
     <% end %>
 
     <% if @user.job_title == 'Travel' %>
+    <% @reviewee = peer_forms(@travel_arr) %><br/>
+    Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
       <%= @url_travel_peer %>
     <% end %>
 

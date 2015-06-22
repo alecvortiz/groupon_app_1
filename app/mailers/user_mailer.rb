@@ -1,10 +1,12 @@
 require 'digest/sha2'
 class UserMailer < ApplicationMailer
+	
 
 	default "Message-ID"=>"#{Digest::SHA2.hexdigest(Time.now.to_i.to_s)}@gmail.com"
-
+   helper UsersHelper
 
 	def email(user, arr)
+
    		@user = user
    		@bus_intel_arr = arr[0]
    		@ct_sales_arr = arr[1] 
@@ -24,13 +26,67 @@ class UserMailer < ApplicationMailer
    		@telesales_arr = arr[15] 
    		@travel_arr = arr[16]
    		@product_designer_arr = arr[17]
+         @cs_tl = arr[18]
    		
-	    
+	  
 
 
-    	@url_salesperson_peer ='https://docs.google.com/forms/d/1jZSvb3UFvUuM-BQf2AJJfmsG60Y1LzOkmb8EyXBNYl0/viewform'
-		@url_salesperson_subordinate = 'https://docs.google.com/forms/d/1_lzr-j7bmq7pSSTFsbKizJdWllCD-v_HZ4v5ldDbbIg/viewform'
-		@url_salesperson_supervisor = 'https://docs.google.com/forms/d/16hi-amDALRlL9VVYT51rofjQU7svggwWtSHbkISeZ1E/viewform'
+    	@url_busintel_peer
+      @url_ct_sales_supervisor
+      @url_ct_sales_peer 
+      @url_ct_sales_manager_subordinate
+      @url_manager_supervisor
+      @url_city_planner_peer
+      @url_city_planner_manager_subordinate
+      @url_CS_peer
+      @url_CS_team_leader_subordinate
+      @url_CS_supervisor
+      @url_CS_team_leader_peer
+      @url_CS_supervisor
+      @url_durban_city_manager_subordinate
+      @url_durban_sales_peer
+      @url_durban_sales_supervisor
+      @url_editorial_manager_subordinate
+      @url_editorial_supervisor
+      @url_finance_peer
+      @url_goods_admin_peer
+      @url_goods_manager_subordinate
+      @url_goods_admin_supervisor
+      @url_goods_sales_supervisor 
+      @url_goods_sales_peer
+      @url_goods_manager_subordinate
+      @url_johannesburg_sales_peer
+      @url_logistics_peer 
+      @url_logistics_manager_subordinate
+      @url_logistics_supervisor
+      @url_logistics_manager_peer
+      @url_pretoria_sales_peer
+      @url_pretoria_sales_manager_subordinate
+      @url_pretoria_sales_supervisor
+      @url_product_designer_peer 
+      @url_PRM_peer
+      @url_PRM_manager_subordinate
+      @url_PRM_supervisor
+      @url_QA_supervisor
+      @url_PRM_manager_peer
+      @url_QA_peer
+      @url_PRM_manager_subordinate
+      @url_pretoria_sales_supervisor
+      @url_pretoria_sales_manager_supervisor
+      @url_johannesburg_sales_supervisor 
+      @url_goods_sales_supervisor
+      @url_goods_manager_supevisor
+      @url_durban_sales_supervisor 
+      @url_durban_city_manager_supervisor
+      @url_ct_sales_supervisor 
+      @url_ct_sales_manager_supervisor
+      @url_telesales_supervisor
+      @url_telesales_manager_supervisor
+      @url_strategic_accounts_peer
+      @url_telesales_peer
+      @url_telesales_manager_subordinate
+      @url_telesales_supervisor
+      @url_travel_peer
 
 		mail(to: @user.email, 
 				subject: 'Performance Appraisal', 
@@ -39,7 +95,5 @@ class UserMailer < ApplicationMailer
 
 
   	end
-
-
 
 end

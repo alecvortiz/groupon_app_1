@@ -30,6 +30,11 @@
 	    <% @cs.each do |person| %>
 	      <% @cs_arr << (person) %>
 	    <% end %>
+
+	    <% @cs_tl_arr = [] %>
+	    <% @cs_tl.each do |person| %>
+	      <% @cs_tl_arr << (person) %>
+	    <% end %>
 	    
 
 	    <% @durban_sales_arr = [] %>
@@ -116,7 +121,7 @@
 	    <% end %>
 	    
 
-	    <% @arr = [@bus_intel_arr, @ct_sales_arr, @CEO_arr, @city_planner_arr, @cs_arr,@durban_sales_arr, @editorial_arr, @finance_arr, @goods_administrator_arr,@johannesburg_sales_arr, @logistics_arr, @pretoria_sales_arr, @PRM_arr, @QA_arr, @strategic_accounts_arr, @telesales_arr, @travel_arr, @product_designer_arr] %>
+	    <% @arr = [@bus_intel_arr, @ct_sales_arr, @CEO_arr, @city_planner_arr, @cs_arr,@durban_sales_arr, @editorial_arr, @finance_arr, @goods_administrator_arr,@johannesburg_sales_arr, @logistics_arr, @pretoria_sales_arr, @PRM_arr, @QA_arr, @strategic_accounts_arr, @telesales_arr, @travel_arr, @product_designer_arr, @cs_tl_arr] %>
 
 
 <% UserMailer.email(blake, @arr).deliver_now %>
