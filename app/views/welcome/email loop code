@@ -20,3 +20,5 @@
     <% if @user.job_title == 'Risk Manager' %>
       
     <% end %>
+
+ 

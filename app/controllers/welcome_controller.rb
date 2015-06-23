@@ -23,6 +23,7 @@ class WelcomeController < ApplicationController
   	@editorial = User.where(job_title: 'Editorial')
   	@editorial_manager = User.where(job_title: 'Editorial Manager')
   	@finance = User.where(job_title: 'Finance')
+    @finance_manager = User.where(job_title: 'Finance Manager')
   	@goods_administrator = User.where(job_title: 'Goods Administrator')
   	@goods_manager = User.where(job_title: 'Goods Manager')
   	@goods_sales = User.where(job_title: 'Goods Sales')
@@ -36,12 +37,18 @@ class WelcomeController < ApplicationController
   	@PRM = User.where(job_title: 'PRM')
   	@PRM_manager = User.where(job_title: 'PRM Manager')
   	@QA = User.where(job_title: 'QA')
-  	@risk_manager = User.where(job_title: 'Risk Manager')
   	@sales_manager = User.where(job_title: 'Sales Manager')
  	  @strategic_accounts = User.where(job_title: 'Strategic Accounts')
     @telesales = User.where(job_title: 'Telesales')
   	@telesales_manager = User.where(job_title: 'Telesales Manager')
  	  @travel = User.where(job_title: 'Travel')
+
+    #jobs that currently have no personel
+    @bus_intel_manager = User.where(job_title: 'Business Intelligence Manager')
+    @strategic_accounts_manager = User.where(job_title: 'Strategic Accounts Manager')
+    @marketing_associate = User.where(job_title: 'Marketing Associate')
+    @marketing_manager = User.where(job_title: 'Marketing Manager')
+    @johannesburg_sales_manager = User.where(job_title: 'Johannesburg Sales Manager')
 
  	
   end
