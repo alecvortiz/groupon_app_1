@@ -12,297 +12,312 @@
 
     <% if @user.job_title == 'Business Intelligence' %>
         <% @reviewee = peer_forms(@bus_intel_arr) %><br/>
-        <% if @reviewee.first_name = "me" %>
-          You have no peer surveys
+        <% if @reviewee.first_name == "me" %>
+          You have no peer surveys<br/>
         <% else %>
-          Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
+          Please fill out this form for <strong><%= @reviewee.first_name %></strong><br/>
+          <%= @url_busintel_peer %><br/><br/>
         <% end %>
-        <%= @url_busintel_peer %>
     <% end %>
 
     <% if @user.job_title == 'Cape Town Sales Manager' %>
-      Fill this form out for all members of your sales team
-      <%= @url_ct_sales_supervisor %>
+      Fill this form out for all members of your sales team<br/>
+      <%= @url_ct_sales_supervisor %><br/><br/>
     <% end %>
 
     <% if @user.job_title == 'Cape Town Sales' %>
       <% @reviewee = peer_forms(@ct_sales_arr) %><br/>
-      <% if @reviewee.first_name = "me" %>
-        You have no peer surveys
+      <% if @reviewee.first_name == "me" %>
+        You have no peer surveys<br/><br/>
       <% else %>
-        Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
+        Please fill out this form for <strong><%= @reviewee.first_name %> <%= @reviewee.last_name %></strong><br/>
+        <%= @url_ct_sales_peer %><br/><br/>
       <% end %>
-      <%= @url_ct_sales_peer %>
 
-      <%= @url_ct_sales_manager_subordinate %>
+      Please fill this form out for your manager<br/>
+      <%= @url_ct_sales_manager_subordinate %><br/><br/>
     <% end %>
 
-    <% if @user.job_title == 'CEO' %>
-      <%= @url_manager_supervisor %>
-    <% end %>
 
-     <% if @user.job_title == 'City Planner Manager' %>
-      <%= @url_city_planner_supervisor %>
+    <% if @user.job_title == 'City Planner Manager' %>
+      Fill this form out for all members of your City Planning team<br/>
+      <%= @url_city_planner_supervisor %><br/><br/>
     <% end %>
 
     <% if @user.job_title == 'City Planner' %>
       <% @reviewee = peer_forms(@city_planner_arr) %><br/>
-      <% if @reviewee.first_name = "me" %>
-        You have no peer surveys
+      <% if @reviewee.first_name == "me" %>
+        You have no peer surveys<br/><br/>
       <% else %>
-        Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
+        Please fill out this form for <strong><%= @reviewee.first_name %> <%= @reviewee.last_name %></strong><br/>
+        <%= @url_city_planner_peer %><br/><br/>
       <% end %>
-      <%= @url_city_planner_peer %>
+     
 
-      <%= @url_city_planner_manager_subordinate %>
+      Please fill this form out for your manager<br/>
+      <%= @url_city_planner_manager_subordinate %><br/>
     <% end %>
 
     <% if @user.job_title == 'CS' %>
       <% @reviewee = peer_forms(@cs_arr) %><br/>
-      <% if @reviewee.first_name = "me" %>
-        You have no peer surveys
+      <% if @reviewee.first_name == "me" %>
+        You have no peer surveys<br/>
       <% else %>
-        Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
+        Please fill out this form for <strong><%= @reviewee.first_name %> <%= @reviewee.last_name %></strong><br/>
+        <%= @url_CS_peer %><br/><br/>
       <% end %>
-      <%= @url_CS_peer %>
 
-      <%= @url_CS_team_leader_subordinate %>
+      Please fill this form out for your manager<br/>
+      <%= @url_CS_team_leader_subordinate %><br/>
     <% end %>
 
     <% if @user.job_title == 'CS Manager' %>
-      <%= @url_CS_supervisor %>
+      Fill this form out for all members of your CS team<br/>
+      <%= @url_CS_supervisor %><br/>
     <% end %>
 
     <% if @user.job_title == 'CS Team Leader' %>
-      <% @reviewee = peer_forms(@cs_tl_arr) %><br/>
-      <% if @reviewee.first_name = "me" %>
-        You have no peer surveys
+      <% @reviewee = peer_forms(@cs_tl_arr) %>
+      <% if @reviewee.first_name == "me" %>
+        You have no peer surveys<br/>
       <% else %>
-        Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
+        Please fill out this form for <strong><%= @reviewee.first_name %> <%= @reviewee.last_name %></strong><br/>
+        <%= @url_CS_team_leader_peer %><br/><br/>
       <% end %>
-      <%= @url_CS_team_leader_peer %>
 
-      <%= @url_CS_supervisor %>
+      Fill this form out for all members of your CS team<br/>
+      <%= @url_CS_supervisor %><br/>
     <% end %>
 
     <% if @user.job_title == 'Durban Sales' %>
-      <% @reviewee = peer_forms(@durban_sales_arr) %><br/>
-      <% if @reviewee.first_name = "me" %>
-        You have no peer surveys
+      <% @reviewee = peer_forms(@durban_sales_arr) %>
+      <% if @reviewee.first_name == "me" %>
+        You have no peer surveys<br/>
       <% else %>
-        Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
+        Please fill out this form for <strong><%= @reviewee.first_name %> <%= @reviewee.last_name %></strong><br/>
+        <%= @url_durban_sales_peer %><br/><br/>
       <% end %>
-      <%= @url_durban_city_manager_subordinate %>
 
-      <%= @url_durban_sales_peer %>
+      Please fill this form out for your manager<br/><br/>
+      <%= @url_durban_city_manager_subordinate %><br/>
     <% end %>
 
     <% if @user.job_title == 'Durban City Manager' %>
-      <%= @url_durban_sales_supervisor %>
+      Fill this form out for all members of your sales team<br/><br/>
+      <%= @url_durban_sales_supervisor %><br/>
     <% end %>
 
     <% if @user.job_title == 'Editorial' %>
-      <% @reviewee = peer_forms(@editorial_arr) %><br/>
-      <% if @reviewee.first_name = "me" %>
-        You have no peer surveys
+      <% @reviewee = peer_forms(@editorial_arr) %>
+      <% if @reviewee.first_name == "me" %>
+        You have no peer surveys<br/><br/>
       <% else %>
-        Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
+        Please fill out this form for <strong><%= @reviewee.first_name %> <%= @reviewee.last_name %></strong><br/>
+        <%= @url_editorial_peer %><br/><br/>
       <% end %>
-      <%= @url_editorial_peer %>
 
-      <%= @url_editorial_manager_subordinate %>
+      Please fill this form out for your manager<br/><br/>
+      <%= @url_editorial_manager_subordinate %><br/>
     <% end %>
 
     <% if @user.job_title == 'Editorial Manager' %>
-      <%= @url_editorial_supervisor %>
+      Fill this form out for all members of your editorial team<br/><br/>
+      <%= @url_editorial_supervisor %><br/>
     <% end %>
 
     <% if @user.job_title == 'Finance' %>
-      <% @reviewee = peer_forms(@finance_arr) %><br/>
-      <% if @reviewee.first_name = "me" %>
-        You have no peer surveys
+      <% @reviewee = peer_forms(@finance_arr) %>
+      <% if @reviewee.first_name == "me" %>
+        You have no peer surveys<br/>
       <% else %>
-        Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
+        Please fill out this form for <strong><%= @reviewee.first_name %> <%= @reviewee.last_name %></strong><br/><br/>
+        <%= @url_finance_peer %><br/>
       <% end %>
-      <%= @url_finance_peer %>
     <% end %>
 
     <% if @user.job_title == 'Goods Administrator' %>
       <% @reviewee = peer_forms(@goods_administrator_arr) %><br/>
-      <% if @reviewee.first_name = "me" %>
-        You have no peer surveys
+      <% if @reviewee.first_name == "me" %>
+        You have no peer surveys<br/>
       <% else %>
-        Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
+        Please fill out this form for <strong><%= @reviewee.first_name %> <%= @reviewee.last_name %></strong><br/><br/>
+        <%= @url_goods_admin_peer %><br/><br/>
       <% end %>
-      <%= @url_goods_admin_peer %>
 
-      <%= @url_goods_manager_subordinate %>
+      Please fill this form out for your manager<br/><br/>
+      <%= @url_goods_manager_subordinate %><br/>
     <% end %>
 
     <% if @user.job_title == 'Goods Manager' %>
-      <%= @url_goods_admin_supervisor %>
-      <%= @url_goods_sales_supervisor %>
+      Please fill this forms out for all members of your goods administor team<br/>
+      <%= @url_goods_admin_supervisor %><br/><br/>
+      Please fill this form out for all members of your goods sales team<br/><br/>
+      <%= @url_goods_sales_supervisor %><br/>
     <% end %>
 
     <% if @user.job_title == 'Goods Sales' %>
-      <% @reviewee = peer_forms(@goods_sales_arr) %><br/>
-      <% if @reviewee.first_name = "me" %>
-        You have no peer surveys
+      <% @reviewee = peer_forms(@goods_sales_arr) %>
+      <% if @reviewee.first_name == "me" %>
+        You have no peer surveys<br/><br/>
       <% else %>
-        Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
+        Please fill out this form for <strong><%= @reviewee.first_name %> <%= @reviewee.last_name %></strong><br/><br/>
+        <%= @url_goods_sales_peer %><br/><br/>
       <% end %>
-      <%= @url_goods_sales_peer %>
       
-      <%= @url_goods_manager_subordinate %>  
+      Please fill this form out for your manager<br/><br/>
+      <%= @url_goods_manager_subordinate %><br/> <br/> 
     <% end %>
 
-    <% if @user.job_title == 'HR Manager' %>
-      
-    <% end %>
 
     <% if @user.job_title == 'Johannesburg Sales' %>
-      <% @reviewee = peer_forms(@johannesburg_sales_arr) %><br/>
-      <% if @reviewee.first_name = "me" %>
-        You have no peer surveys
+      <% @reviewee = peer_forms(@johannesburg_sales_arr) %>
+      <% if @reviewee.first_name == "me" %>
+        You have no peer surveys<br/>
       <% else %>
-        Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
+        Please fill out this form for <strong><%= @reviewee.first_name %> <%= @reviewee.last_name %></strong><br/><br/>
+      <%= @url_johannesburg_sales_peer %><br/><br/>
       <% end %>
-      <%= @url_johannesburg_sales_peer %>
     <% end %>
 
     <% if @user.job_title == 'Logistics' %>
-      <% @reviewee = peer_forms(@logistics_arr) %><br/>
-      <% if @reviewee.first_name = "me" %>
-        You have no peer surveys
+      <% @reviewee = peer_forms(@logistics_arr) %>
+      <% if @reviewee.first_name == "me" %>
+        You have no peer surveys<br/><br/>
       <% else %>
-        Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
+        Please fill out this form for <strong><%= @reviewee.first_name %> <%= @reviewee.last_name %></strong><br/><br/>
+        <%= @url_logistics_peer %><br/><br/>
       <% end %>
-      <%= @url_logistics_peer %>
 
-      <%= @url_logistics_manager_subordinate %>
+      Please fill this form out for your manager<br/>
+      <%= @url_logistics_manager_subordinate %><br/><br/>
     <% end %>
 
      <% if @user.job_title == 'Logistics Manager' %>
       <% @reviewee = peer_forms(@logistics_manager_arr) %>
-      <% if @reviewee.first_name = "me" %>
-        You have no peer surveys
+      <% if @reviewee.first_name == "me" %>
+        You have no peer surveys<br/>
       <% else %>
-        Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
+        Please fill out this form for <strong><%= @reviewee.first_name %> <%= @reviewee.last_name %></strong><br/><br/>
+        <%= @url_logistics_manager_peer %><br/><br/>
       <% end %>
-      <%= @url_logistics_manager_peer %>
 
-      <%= @url_logistics_supervisor %>
+      Please fill this form out for all members of your logistics team<br/><br/>
+      <%= @url_logistics_supervisor %><br/>
     <% end %>
 
     <% if @user.job_title == 'Pretoria Sales' %>
-      <% @reviewee = peer_forms(@pretoria_sales_arr) %><br/>
-      <% if @reviewee.first_name = "me" %>
-        You have no peer surveys
+      <% @reviewee = peer_forms(@pretoria_sales_arr) %>
+      <% if @reviewee.first_name == "me" %>
+        You have no peer surveys<br/><br/>
       <% else %>
-        Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
+        Please fill out this form for <strong><%= @reviewee.first_name %> <%= @reviewee.last_name %></strong><br/><br/>
+        <%= @url_pretoria_sales_peer %><br/><br/>
       <% end %>
-      <%= @url_pretoria_sales_peer %>
 
-      <%= @url_pretoria_sales_manager_subordinate %>
+      Please fill this form out for your manager<br/><br/>
+      <%= @url_pretoria_sales_manager_subordinate %><br/><br/>
     <% end %>
 
     <% if @user.job_title == 'Pretoria Sales Manager' %>
-      <%= @url_pretoria_sales_supervisor %>
+      Please fill this form out for all members of your sales team<br/><br/>
+      <%= @url_pretoria_sales_supervisor %><br/><br/>
     <% end %>
 
     <% if @user.job_title == 'Product Designer' %> 
-      <% @reviewee = peer_forms(@product_designer_arr) %><br/>
-      <% if @reviewee.first_name = "me" %>
-        You have no peer surveys
+      <% @reviewee = peer_forms(@product_designer_arr) %>
+      <% if @reviewee.first_name == "me" %>
+        You have no peer surveys<br/><br/>
       <% else %>
-        Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
-        <%= @url_product_designer_peer %>
+        Please fill out this form for <strong><%= @reviewee.first_name %> <%= @reviewee.last_name %></strong><br/>
+        <%= @url_product_designer_peer %><br/><br/>
       <% end %>
-
     <% end %>
 
     <% if @user.job_title == 'PRM' %>
-      <% @reviewee = peer_forms(@PRM_arr) %><br/>
-      <% if @reviewee.first_name = "me" %>
-        You have no peer surveys
+      <% @reviewee = peer_forms(@PRM_arr) %>
+      <% if @reviewee.first_name == "me" %>
+        You have no peer surveys<br/>
       <% else %>
-        Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
+        Please fill out this form for <strong><%= @reviewee.first_name %> <%= @reviewee.last_name %></strong><br/><br/>
+        <%= @url_PRM_peer %><br/><br/>
       <% end %>
-      <%= @url_PRM_peer %>
 
-      <%= @url_PRM_manager_subordinate %>
+      Please fill this form out for your manager<br/><br/>
+      <%= @url_PRM_manager_subordinate %><br/><br/>
     <% end %>
 
     <% if @user.job_title == 'PRM Manager' %>
-      <%= @url_PRM_supervisor %>
-      <%= @url_QA_supervisor %>
-      <%= @url_PRM_manager_peer %>
+      Please fill this form out for all members of your PRM team<br/><br/>
+      <%= @url_PRM_supervisor %><br/><br/>
+
+      Please fill this form out for all members of your QA team<br/><br/>
+      <%= @url_QA_supervisor %><br/><br/>
     <% end %>
 
     <% if @user.job_title == 'QA' %>
-      <% @reviewee = peer_forms(@QA_arr) %><br/>
-      <% if @reviewee.first_name = "me" %>
-        You have no peer surveys
+      <% @reviewee = peer_forms(@QA_arr) %><br/><br/>
+      <% if @reviewee.first_name == "me" %>
+        You have no peer surveys<br/><br/>
       <% else %>
-        Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
+        Please fill out this form for <strong><%= @reviewee.first_name %> <%= @reviewee.last_name %></strong><br/><br/>
+        <%= @url_QA_peer %><br/><br/>
       <% end %>
-      <%= @url_QA_peer %>
 
-      <%= @url_PRM_manager_subordinate %>
+      Please fill this form out for your manager<br/><br/>
+      <%= @url_PRM_manager_subordinate %><br/><br/>
     <% end %>
 
-    <% if @user.job_title == 'Risk Manager' %>
-      
-    <% end %>
 
     <% if @user.job_title == 'Sales Manager' %>
-      <%= @url_pretoria_sales_supervisor %>
-      <%= @url_pretoria_sales_manager_supervisor %>
-      <%= @url_johannesburg_sales_supervisor %>
-      <%= @url_goods_sales_supervisor%>
-      <%= @url_goods_manager_supevisor%>
-      <%= @url_durban_sales_supervisor %>
-      <%= @url_durban_city_manager_supervisor %>
-      <%= @url_ct_sales_supervisor %>
-      <%= @url_ct_sales_manager_supervisor %>
-      <%= @url_telesales_supervisor %>
-      <%= @url_telesales_manager_supervisor%>
+      <%= @url_pretoria_sales_supervisor %><br/><br/>
+      <%= @url_pretoria_sales_manager_supervisor %><br/><br/>
+      <%= @url_johannesburg_sales_supervisor %><br/><br/>
+      <%= @url_goods_sales_supervisor%><br/><br/>
+      <%= @url_goods_manager_supevisor%><br/><br/>
+      <%= @url_durban_sales_supervisor %><br/><br/>
+      <%= @url_durban_city_manager_supervisor %><br/><br/>
+      <%= @url_ct_sales_supervisor %><br/><br/>
+      <%= @url_ct_sales_manager_supervisor %><br/><br/>
+      <%= @url_telesales_supervisor %><br/><br/>
+      <%= @url_telesales_manager_supervisor%><br/><br/>
     <% end %>
 
     <% if @user.job_title == 'Strategic Accounts' %>
-      <% @reviewee = peer_forms(@strategic_accounts_arr) %><br/>
-      <% if @reviewee.first_name = "me" %>
-          You have no peer surveys
+      <% @reviewee = peer_forms(@strategic_accounts_arr) %>
+      <% if @reviewee.first_name == "me" %>
+          You have no peer surveys<br/><br/>
       <% else %>
-        Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
+        Please fill out this form for <strong><%= @reviewee.first_name %> <%= @reviewee.last_name %></strong><br/><br/>
+        <%= @url_strategic_accounts_peer %><br/><br/> 
       <% end %>
-      <%= @url_strategic_accounts_peer %>  
     <% end %>
 
     <% if @user.job_title == 'Telesales' %>
-      <% @reviewee = peer_forms(@telesales_arr) %><br/>
-      <% if @reviewee.first_name = "me" %>
-        You have no peer surveys
+      <% @reviewee = peer_forms(@telesales_arr) %>
+      <% if @reviewee.first_name == "me" %>
+        You have no peer surveys<br/><br/>
       <% else %>
-        Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
+        Please fill out this form for <strong><%= @reviewee.first_name %> <%= @reviewee.last_name %></strong><br/><br/>
+        <%= @url_telesales_peer %><br/><br/>
       <% end %>
-      <%= @url_telesales_peer %>
 
-      <%= @url_telesales_manager_subordinate %>
+      Please fill this form out for your manager<br/><br/>
+      <%= @url_telesales_manager_subordinate %><br/><br/>
     <% end %>
 
     <% if @user.job_title == 'Telesales Manager' %>
-      <%= @url_telesales_supervisor %>
+      Please fill this form out for all members of your telesales team<br/><br/>
+      <%= @url_telesales_supervisor %><br/><br/>
     <% end %>
 
     <% if @user.job_title == 'Travel' %>
-      <% @reviewee = peer_forms(@travel_arr) %><br/>
-      <% if @reviewee.first_name = "me" %>
-          You have no peer surveys
+      <% @reviewee = peer_forms(@travel_arr) %>
+      <% if @reviewee.first_name == "me" %>
+          You have no peer surveys<br/><br/>
       <% else %>
-        Please fill out this form for <%= @reviewee.first_name %> <%= @reviewee.last_name %> <%= @url_product_designer_peer %>
+        Please fill out this form for <strong><%= @reviewee.first_name %> <%= @reviewee.last_name %></strong><br/>
+        <%= @url_travel_peer %><br/><br/>
       <% end %>
-      <%= @url_travel_peer %>
     <% end %>
 
 

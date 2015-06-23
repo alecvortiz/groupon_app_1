@@ -6,9 +6,17 @@
 	
 
 
+<% if @user.job_title == 'CEO' %>
+	<%= @url_manager_supervisor %>
+<% end %>
 
-SEEDS!!!!!!!!!!!!!!!!!!
 
 
+    <% if @user.job_title == 'HR Manager' %>
+      
+    <% end %>
 
-	
+
+    <% if @user.job_title == 'Risk Manager' %>
+      
+    <% end %>
