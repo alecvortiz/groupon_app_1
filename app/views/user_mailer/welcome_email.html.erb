@@ -447,11 +447,148 @@
         <%= @url_travel_peer %><br/><br/>
     <% end %>
 
-    <% if @user.job_title == "CEO" %>
-      <% @reviewee = peer_forms(@CEO_arr)
-      Please fill out this form for the Goods Manager <br/><br/>
-        <%= @url_goods_manager_supervisor%><br/><br/> %>
+    <% if @user.job_title == 'HR Administrator' %>
+      <% @reviewee = peer_forms(@hr_admin_arr) %>
+
+      Please fill this out for your manager<br/><br/>
+      <%= @url_hr_manager_subordinate %><br/><br/>
+
+      <% if @reviewee.first_name != "me" %>
+        Please fill out this form for <strong><%= @reviewee.first_name %> <%= @reviewee.last_name %></strong><br/><br/>
+        <%= @url_hr_admin_peer %><br/><br/>
+      <% end %>
+
+        Please assess your own performance<br/><br/>
+        <%= @url_hr_admin_peer %><br/><br/>
     <% end %>
+
+
+    <% if @user.job_title == 'HR Trainer' %>
+      <% @reviewee = peer_forms(@hr_trainer_arr) %>
+
+      Please fill this out for your manager<br/><br/>
+      <%= @url_hr_manager_subordinate %><br/><br/>
+
+      <% if @reviewee.first_name != "me" %>
+        Please fill out this form for <strong><%= @reviewee.first_name %> <%= @reviewee.last_name %></strong><br/><br/>
+        <%= @url_hr_trainer_peer %><br/><br/>
+      <% end %>
+
+        Please assess your own performance<br/><br/>
+        <%= @url_hr_trainer_peer %><br/><br/>
+    <% end %>
+
+
+    <% if @user.job_title == 'HR Manager' %>
+      Fill this form out for all members of your HR Administrator team<br/><br/>
+      <%= @url_hr_admin_supervisor %><br/><br/>
+      Fill this form out for all members of your HR Trainer team<br/><br/>
+      <%= @url_hr_trainer_supervisor %><br/><br/>
+      Please assess your own performance<br/><br/>
+      <%= @url_hr_manager_peer %><br/><br/>
+    <% end %>
+
+
+    <% if @user.job_title == 'Marketing Associate' %>
+      <% @reviewee = peer_forms(@marketing_arr) %>
+
+      Please fill this out for your manager<br/><br/>
+      <%= @url_marketing_manager_subordinate %><br/><br/>
+
+      <% if @reviewee.first_name != "me" %>
+        Please fill out this form for <strong><%= @reviewee.first_name %> <%= @reviewee.last_name %></strong><br/><br/>
+        <%= @url_marketing_peer %><br/><br/>
+      <% end %>
+
+        Please assess your own performance<br/><br/>
+        <%= @url_marketing_peer %><br/><br/>
+    <% end %>
+
+
+    <% if @user.job_title == 'Marketing Manager' %>
+      Fill this form out for all members of your Marketing team<br/><br/>
+      <%= @url_marketing_supervisor %><br/><br/>
+      Please assess your own performance<br/><br/>
+      <%= @url_marketing_manager_peer %><br/><br/>
+    <% end %>
+
+
+    <% if @user.job_title == "CEO" %>
+      <% if @bus_intel_manager.first %>
+        Please fill out this form for <strong><%= @bus_intel_manager.first.first_name %> <%= @bus_intel_manager.first.first_name %></strong><br/><br/>
+        <%= @url_busintel_manager_supervisor %><br/><br/>
+      <% end %>
+
+      <% if @sales_manager.first %>
+        Please fill out this form for <strong><%= @sales_manager.first.first_name %> <%= @sales_manager.first.first_name %></strong><br/><br/>
+        <%= @url_sales_manager_supervisor %><br/><br/>
+      <% end %>
+
+      <% if @finance_manager.first %>
+        Please fill out this form for <strong><%= @finance_manager.first.first_name %> <%= @finance_manager.first.first_name %></strong><br/><br/>
+        <%= @url_finance_manager_supervisor %><br/><br/> 
+      <% end %>
+
+      <% if @city_planner_manager.first %>
+        Please fill out this form for <strong><%= @city_planner_manager.first.first_name %> <%= @city_planner_manager.first.first_name %></strong><br/><br/>
+        <%= @url_city_planner_manager_supervisor %><br/><br/>
+      <% end %>
+
+      <% if @editorial_manager.first %>
+        Please fill out this form for <strong><%= @editorial_manager.first.first_name %> <%= @editorial_manager.first.first_name %></strong><br/><br/>
+        <%= @url_editorial_manager_supervisor %><br/><br/> 
+      <% end %>
+
+      <% if @logistics_manager.first %>
+        Please fill out this form for <strong><%= @logistics_manager.first.first_name %> <%= @logistics_manager.first.first_name %></strong><br/><br/>
+        <%= @url_logistics_manager_supervisor %><br/><br/>
+      <% end %>
+
+      <% if @PRM_manager.first %>
+        Please fill out this form for <strong><%= @PRM_manager.first.first_name %> <%= @PRM_manager.first.first_name %></strong><br/><br/>
+        <%= @url_PRM_manager_supervisor %><br/><br/> 
+      <% end %>
+
+      <% if @goods_manager.first %>
+        Please fill out this form for <strong><%= @goods_manager.first.first_name %> <%= @goods_manager.first.first_name %></strong><br/><br/>
+        <%= @url_goods_manager_supervisor %><br/><br/>
+      <% end %>
+
+      <% if @cs_manager.first %>
+        Please fill out this form for <strong><%= @CS_manager.first.first_name %> <%= @CS_manager.first.first_name %></strong><br/><br/>
+        <%= @url_CS_manager_supervisor %><br/><br/> 
+      <% end %>
+
+      <% if @hr_manager.first %>
+        Please fill out this form for <strong><%= @hr_manager.first.first_name %> <%= @hr_manager.first.first_name %></strong><br/><br/>
+        <%= @url_hr_manager_supervisor %><br/><br/> 
+      <% end %>
+
+      <% if @strategic_accounts_manager.first %>
+        Please fill out this form for <strong><%= @strategic_accounts_manager.first.first_name %> <%= @strategic_accounts_manager.first.first_name %></strong><br/><br/>
+        <%= @url_strategic_accounts_manager_supervisor %><br/><br/> 
+      <% end %>
+
+      <% if @marketing_manager.first %>
+        Please fill out this form for <strong><%= @marketing_manager.first.first_name %> <%= @marketing_manager.first.first_name %></strong><br/><br/>
+        <%= @url_marketing_manager_supervisor %><br/><br/> 
+      <% end %>
+
+    <% end %>
+      
+      
+      
+      
+       
+      
+       
+      
+      
+      
+      
+       
+      
+     
 
 
     </p>
