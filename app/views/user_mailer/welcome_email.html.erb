@@ -98,7 +98,7 @@
     <% if @user.job_title == 'CS Team Leader' %>
       <% @reviewee = peer_forms(@cs_tl_arr) %>
       Please fill this form out for your manager<br/><br/>
-      <%= @url_cs_manager_subordinate %><br/><br/>
+      <%= @url_CS_manager_subordinate %><br/><br/>
 
       Please fill this form out for all members of your CS team<br/><br/>
       <%= @url_CS_supervisor %><br/><br/>
@@ -116,7 +116,7 @@
 
     <% if @user.job_title == 'CS Manager' %>
       Please fill this form out for all CS team leaders<br/><br/>
-      <%= @url_cs_tl_supervisor %><br/><br/>
+      <%= @url_CS_tl_supervisor %><br/><br/>
       Please assess your own performance<br/><br/>
       <%= @url_CS_manager_peer %><br/><br/>
     <% end %>
@@ -127,7 +127,7 @@
       <% @reviewee = peer_forms(@durban_sales_arr) %>
 
       Please fill this form out for your manager<br/><br/>
-      <%= @url_durban_city_manager_subordinate %><br/><br/>
+      <%= @url_durban_manager_subordinate %><br/><br/>
 
       <% if @reviewee.first_name != "me" %>
         Please fill out this form for <strong><%= @reviewee.first_name %> <%= @reviewee.last_name %></strong><br/><br/>
@@ -259,7 +259,7 @@
       Fill this form out for all members of your sales team<br/><br/>
       <%= @url_johannesburg_sales_supervisor %><br/><br/>
       Please assess your own performance<br/><br/>
-      <%= @url_johannesburg_sales_peer %><br/><br/>
+      <%= @url_johannesburg_sales_manager_peer %><br/><br/>
     <% end %>
 
 
@@ -316,7 +316,7 @@
       Please fill this form out for all members of your sales team<br/><br/>
       <%= @url_pretoria_sales_supervisor %><br/><br/>
       Please assess your own performance<br/><br/>
-      <%= @url_pretoria_sales_peer %><br/><br/>
+      <%= @url_pretoria_sales_manager_peer %><br/><br/>
     <% end %>
 
 
@@ -373,12 +373,10 @@
     <% if @user.job_title == 'Sales Manager' %>
       Please fill out this form for the Pretoria Sales Manager <br/><br/>
       <%= @url_pretoria_sales_manager_supervisor %><br/><br/>
-      Please fill out this form for the Goods Manager <br/><br/>
-      <%= @url_goods_manager_supevisor%><br/><br/>
       Please fill out this form for the Durban City Manager <br/><br/>
-      <%= @url_durban_city_manager_supervisor %><br/><br/>
+      <%= @url_durban_manager_supervisor %><br/><br/>
       Please fill out this form for the Cape Town Sales Manager <br/><br/> 
-      <%= @url_ct_sales_manager_supervisor %><br/><br/>
+      <%= @url_ct_manager_supervisor %><br/><br/>
       Please fill out this form for the Telesales Manager <br/><br/>
       <%= @url_telesales_manager_supervisor%><br/><br/>
       <% if @johannesburg_sales_manager.first %>
@@ -449,7 +447,11 @@
         <%= @url_travel_peer %><br/><br/>
     <% end %>
 
-
+    <% if @user.job_title == "CEO" %>
+      <% @reviewee = peer_forms(@CEO_arr)
+      Please fill out this form for the Goods Manager <br/><br/>
+        <%= @url_goods_manager_supervisor%><br/><br/> %>
+    <% end %>
 
 
     </p>
