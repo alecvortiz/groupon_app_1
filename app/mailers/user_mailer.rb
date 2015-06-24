@@ -29,7 +29,10 @@ class UserMailer < ApplicationMailer
          @cs_tl_arr = arr[18]
          @goods_sales_arr = arr[19]
          @logistics_manager_arr = arr[20]
-
+         @hr_admin_arr = arr[21]
+         @hr_trainer_arr = arr[22]
+         @marketing_arr = [23]
+   
 
          @users = User.all
          @bus_intel = User.where(job_title: 'Business Intelligence')
@@ -50,7 +53,6 @@ class UserMailer < ApplicationMailer
          @goods_administrator = User.where(job_title: 'Goods Administrator')
          @goods_manager = User.where(job_title: 'Goods Manager')
          @goods_sales = User.where(job_title: 'Goods Sales')
-         @HR_manager = User.where(job_title: 'HR Manager')
          @johannesburg_sales = User.where(job_title: 'Johannesburg Sales')
          @logistics = User.where(job_title: "Logistics")
          @logistics_manager = User.where(job_title: "Logistics Manager")
@@ -68,10 +70,14 @@ class UserMailer < ApplicationMailer
 
           #jobs that currently have no personel
          @bus_intel_manager = User.where(job_title: 'Business Intelligence Manager')
-         @marketing_associate = User.where(job_title: 'Marketing Associate')
+         @marketing = User.where(job_title: 'Marketing Associate')
          @marketing_manager = User.where(job_title: 'Marketing Manager')
          @johannesburg_sales_manager = User.where(job_title: 'Johannesburg Sales Manager')
          @strategic_accounts_manager = User.where(job_title: 'Strategic Accounts Manager')
+         @hr_manager = User.where(job_title: "HR Manager")
+         @hr_admin = User.where(job_title: 'HR Administrator')
+         @hr_trainer = User.where(job_title: 'HR Trainer')
+
    		
 	  
 
@@ -89,7 +95,7 @@ class UserMailer < ApplicationMailer
       @url_ct_sales_manager_subordinate = "https://docs.google.com/forms/d/10_y8wuP4mTGIDvDCy3FRFC3FmF5Has_yXyWv8ruo0Po/viewform"
 
       @url_city_planner_manager_peer = "https://docs.google.com/forms/d/1j7_Q7r_zoavFSUN2qU5TZyRcYnnP4RXKZGvUOOEZNX8/viewform"
-      @url_city_planner_supervisor =
+      @url_city_planner_supervisor = "https://docs.google.com/forms/d/1iR_iaAzF90yIXssfmbeOSaRRBZDrGmGRAIh3aD0BDFE/viewform"
 
       @url_city_planner_peer = "https://docs.google.com/forms/d/1bZJzJtty6mBtryjdwRITm2gASlzwbu3hnC--6_EtFtc/viewform"
       @url_city_planner_manager_subordinate = "https://docs.google.com/forms/d/1SsU2GYMp0uzM6eaMC4IjWkR_f9FEcdIusoFvNo_8kA8/viewform"
@@ -135,7 +141,7 @@ class UserMailer < ApplicationMailer
       @url_johannesburg_sales_manager_subordinate = "https://docs.google.com/forms/d/1gTWaZM73vaY5BOEGxtAqIOQHDM2vNblyN1D9DsGgfrw/viewform"
 
       @url_johannesburg_sales_supervisor = "https://docs.google.com/forms/d/1xM-IRqRRYGay1muO9PxVeV4DkPoGLt-sRQqZkPpF_Yc/viewform"
-      @url_johannesburg_sales_manager_peer = 
+      @url_johannesburg_sales_manager_peer = "https://docs.google.com/forms/d/1xbzPjoWUEEf9dnMhxB1GRPPqr_3PKc3fHtoWAUidq2U/viewform"
 
       @url_logistics_manager_subordinate = "https://docs.google.com/forms/d/1VCcf0YbSDsPvrzzS2yrexxlZ6WWkcml96WCneHLRG2k/viewform"
       @url_logistics_peer = "https://docs.google.com/forms/d/1oTQ5ahBXLhvNBgCsrz3PCpckSlkKFT8aKwXQqa0f204/viewform"
@@ -164,8 +170,8 @@ class UserMailer < ApplicationMailer
       @url_durban_manager_supervisor = "https://docs.google.com/forms/d/1vClMBo4sIRjDb0qzemurTyZNRMrycYbuG9rBLD-DmAk/viewform"
       @url_ct_manager_supervisor = "https://docs.google.com/forms/d/1u1asG8Z_NVQ_AfVhlBFCsS9pwiR1B_Lx0pi6E1NLHhs/viewform"
       @url_pretoria_sales_manager_supervisor = "https://docs.google.com/forms/d/1z6I9i523yWY5WWzN8Oaw-qFAMHL4dOhC8aeaKKKdnjQ/viewform"
-      @url_johannesburg_sales_manager_supervisor =
-      @url_telesales_manager_supervisor =
+      @url_johannesburg_sales_manager_supervisor = "https://docs.google.com/forms/d/1F8Rg2mMnt5hwjA7f-Qiq71yLzEPj9xkg2zhhz0ccp9g/viewform"
+      @url_telesales_manager_supervisor = "https://docs.google.com/forms/d/1ouly2guvY6HqZFLyfoN4MmkcOPMy-RcPRoIhueHt9S4/viewform"
       
       @url_strategic_accounts_manager_subordinate = "https://docs.google.com/forms/d/1TUTDyTcBdXRTZCctkxNsu6sYMoMHyILdHRzg5hp53LA/viewform"
       @url_strategic_accounts_peer = "https://docs.google.com/forms/d/1A6sXN6N107tGtFuRPnfL6knjNHrJKuIQQkpEBOLreZM/viewform"
@@ -177,7 +183,7 @@ class UserMailer < ApplicationMailer
       @url_telesales_manager_subordinate = "https://docs.google.com/forms/d/180CPgsWTrEpGqGTbeJhy2kkz7VqkEzLHdf1PucUJVvQ/viewform"
 
       @url_telesales_supervisor = "https://docs.google.com/forms/d/1Py_m-9hjdst4ZkZ8i6TbinncSNOKeaifn-D5TmyNOtQ/viewform"
-      @url_telesales_manager_peer = 
+      @url_telesales_manager_peer = "https://docs.google.com/forms/d/1KcdguaDpfoMkJxDiWylS31HhR3zbuipK3F7Ug1kUPqM/viewform"
 
       @url_travel_peer = "https://docs.google.com/forms/d/1eNbcsLKSZGx57A3O-eM4LNTb_pnxwcmIFvXeFGov5Vc/viewform"
       
@@ -189,27 +195,26 @@ class UserMailer < ApplicationMailer
       @url_PRM_manager_supervisor = "https://docs.google.com/forms/d/18hc3ja5UifJDBw0Tufl-1PkM2XJ8ZW-AObtVKWIeULg/viewform"
       @url_goods_manager_supervisor = "https://docs.google.com/forms/d/1hwZ0EafUbmZhFMBf9aOQVaD5rQCUJ0LJKQprbk5Exq8/viewform"
       @url_busintel_manager_supervisor = "https://docs.google.com/forms/d/1WR_cO0BIXi3wKcfHRWNFAiJ6CdpENk_sd6AhIUbrjWA/viewform"
-      @url_CS_manager_supervisor =
-      @url_hr_manager_supervisor = 
-      @url_busintel_manager_supervisor =
-      @url_strategic_accounts_manager_supervisor = 
-      @url_marketing_manager_supervisor = 
+      @url_CS_manager_supervisor = "https://docs.google.com/forms/d/1A8n1_U2jvYtd_v2qTWWpuSqIVACQxaTVDS1NgeGM8Os/viewform"
+      @url_hr_manager_supervisor = "https://docs.google.com/forms/d/1p3G2pdjcxak0REjsRPhlvCwFqEVu_yV0kNNaWXDEv9w/viewform"
+      @url_busintel_manager_supervisor = "https://docs.google.com/forms/d/1WR_cO0BIXi3wKcfHRWNFAiJ6CdpENk_sd6AhIUbrjWA/viewform"
+      @url_strategic_accounts_manager_supervisor = "https://docs.google.com/forms/d/1wGZyWmPmLs4vPfDWlpMU1qq9Bj0ooq1W8InpwKKWjTM/viewform"
+      @url_marketing_manager_supervisor = "https://docs.google.com/forms/d/1IKbJEJ-MHkePJ2mH3jMrh7t_aylhpYW6Mf7rIjJye5o/viewform"
 
-      @url_hr_admin_peer = 
-      @url_hr_manager_subordinate = 
+      @url_hr_admin_peer = "https://docs.google.com/forms/d/18FIgcv4a963Nr6YE-pkvNFW8FZSUj_qViZ2XnT5Vc6E/viewform"
+      @url_hr_manager_subordinate = "https://docs.google.com/forms/d/1n9h_EBfV4oilF9Xj6l_YbAuA3sTh20S_GciPCTVcaaI/viewform"
 
-      @url_hr_trainer_peer = 
-      @url_hr_manager_subordinate = 
+      @url_hr_trainer_peer = "https://docs.google.com/forms/d/1TzEUIMl8UQFfyfot9YtZrxvydIvStjbJeImbWvR3Njg/viewform"
 
-      @url_hr_manager_peer = 
-      @url_hr_admin_supervisor = 
-      @url_hr_trainer_supervisor =
+      @url_hr_manager_peer = "https://docs.google.com/forms/d/18Y5x6RFrxEejh9vVfZq9rkAo056Yq7-BryMpaPPtJes/viewform"
+      @url_hr_admin_supervisor = "https://docs.google.com/forms/d/1K_cGfJkNVDguYnoH-CNC4stqygszCUQNAM58Wo0-Eco/viewform"
+      @url_hr_trainer_supervisor = "https://docs.google.com/forms/d/1Id6pcA-ArulCoqFH2iTEPzw_hAwaFCdq0e7TFlwe97Y/viewform"
 
-      @url_marketing_peer =
-      @url_marketing_manager_subordinate = 
+      @url_marketing_peer = "https://docs.google.com/forms/d/1Vr8xg0tc1hLwgtny3T6nw8PBaHSztVALRVlgsS09Cuo/viewform"
+      @url_marketing_manager_subordinate = "https://docs.google.com/forms/d/1FtFqEOaflq7Y10ZnJwkrndllaLTb_SQp-VWoSer_8ik/viewform"
 
-      @url_marketing_supervisor = 
-      @url_marketing_manager_peer = 
+      @url_marketing_supervisor = "https://docs.google.com/forms/d/1wwH18i2qNPpwsdLatW5O00Uh2xBErOg3nDJtpdeTF6Q/viewform"
+      @url_marketing_manager_peer = "https://docs.google.com/forms/d/1a8IUce6hrwaASvH20wKjxw5Eaim88bmk3KndjMxXT-M/viewform"
 
 
 		mail(to: @user.email, 
