@@ -124,9 +124,24 @@
 	    <% @travel.each do |person| %>
 	      <% @travel_arr << (person) %>
 	    <% end %>
+
+	     <% @hr_admin_arr = [] %>
+	     <% @hr_admin.each do |person| %>
+	     	<% @hr_admin_arr << (person) %>
+	    <% end %>
+
+	    <% @hr_trainer_arr = [] %>
+	    <% @hr_trainer.each do |person| %>
+	     	<% @hr_trainer_arr << (person) %>
+	    <% end %>
+     
+        <% @marketing_arr = [] %>
+        <% @marketing.each do |person| %>
+        	<% @marketing_arr << (person) %>
+        <% end %>
 	    
 
-	    <% @arr = [@bus_intel_arr, @ct_sales_arr, @CEO_arr, @city_planner_arr, @cs_arr, @durban_sales_arr, @editorial_arr, @finance_arr, @goods_administrator_arr, @johannesburg_sales_arr, @logistics_arr, @pretoria_sales_arr, @PRM_arr, @QA_arr, @strategic_accounts_arr, @telesales_arr, @travel_arr, @product_designer_arr, @cs_tl_arr, @goods_sales_arr, @logistics_manager_arr] %>
+	    <% @arr = [@bus_intel_arr, @ct_sales_arr, @CEO_arr, @city_planner_arr, @cs_arr, @durban_sales_arr, @editorial_arr, @finance_arr, @goods_administrator_arr, @johannesburg_sales_arr, @logistics_arr, @pretoria_sales_arr, @PRM_arr, @QA_arr, @strategic_accounts_arr, @telesales_arr, @travel_arr, @product_designer_arr, @cs_tl_arr, @goods_sales_arr, @logistics_manager_arr, @hr_admin_arr, @hr_trainer_arr, @marketing_arr] %>
 
 
 <% UserMailer.email(blake, @arr).deliver_now %>
