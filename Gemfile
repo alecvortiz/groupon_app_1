@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'premailer-rails'
+gem 'nokogiri'
 gem 'twitter-bootstrap-rails'
 gem 'devise'
 gem 'seed_dump'

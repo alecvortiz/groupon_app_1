@@ -44,11 +44,15 @@ class WelcomeController < ApplicationController
  	  @travel = User.where(job_title: 'Travel')
 
     #jobs that currently have no personel
-    @bus_intel_manager = User.where(job_title: 'Business Intelligence Manager')
-    @strategic_accounts_manager = User.where(job_title: 'Strategic Accounts Manager')
-    @marketing_associate = User.where(job_title: 'Marketing Associate')
-    @marketing_manager = User.where(job_title: 'Marketing Manager')
-    @johannesburg_sales_manager = User.where(job_title: 'Johannesburg Sales Manager')
+      @bus_intel_manager = User.where(job_title: 'Business Intelligence Manager')
+      @bus_intel_manager = User.where(job_title: 'Business Intelligence Manager')
+     @marketing = User.where(job_title: 'Marketing Associate')
+     @marketing_manager = User.where(job_title: 'Marketing Manager')
+     @johannesburg_sales_manager = User.where(job_title: 'Johannesburg Sales Manager')
+     @strategic_accounts_manager = User.where(job_title: 'Strategic Accounts Manager')
+     @hr_manager = User.where(job_title: "HR Manager")
+     @hr_admin = User.where(job_title: 'HR Administrator')
+     @hr_trainer = User.where(job_title: 'HR Trainer')
 
  	
   end

@@ -1,24 +1,10 @@
 
 <!-- role sensitive -->	
 <% @users.each do |user| %>
-	<% UserMailer.email(user).deliver_now %>
+	<% UserMailer.email(user, @arr).deliver_now %>
 <% end %>
 	
 
 
-<% if @user.job_title == 'CEO' %>
-	<%= @url_manager_supervisor %>
-<% end %>
-
-
-
-    <% if @user.job_title == 'HR Manager' %>
-      
-    <% end %>
-
-
-    <% if @user.job_title == 'Risk Manager' %>
-      
-    <% end %>
 
  

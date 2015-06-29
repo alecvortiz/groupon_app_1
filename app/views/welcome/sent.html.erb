@@ -1,6 +1,12 @@
-<% blake = User.find_by(last_name: 'Altman') %>
-<% olivia = User.find_by(last_name: 'Bicks') %>
-<% sophie = User.find_by(last_name: 'Tao') %>
+<% blake1 = User.find_by(email: 'baaltman@umich.edu') %>
+<% blake2 = User.find_by(email: 'blakealtman123@yahoo.com') %>
+<% blake3 = User.find_by(email: 'blakealtman123@gmail.com') %>
+<% olivia1 = User.find_by(email: 'olivia.bicks@gmail.com') %>
+<% olivia2 = User.find_by(email: 'obicks95@yahoo.com') %>
+<% olivia3 = User.find_by(email: 'ohb3fs@virginia.edu') %>
+<% sophie1 = User.find_by(email: 'socialthon@gmail.com') %>
+<% sophie2 = User.find_by(email: 'taozining@hotmail.com') %>
+<% sophie3 = User.find_by(email: 'yt5ny@virginia.edu') %>
 
  		<% @bus_intel_arr = [] %>
 	    <% @bus_intel.each do |person| %>
@@ -144,7 +150,12 @@
 	    <% @arr = [@bus_intel_arr, @ct_sales_arr, @CEO_arr, @city_planner_arr, @cs_arr, @durban_sales_arr, @editorial_arr, @finance_arr, @goods_administrator_arr, @johannesburg_sales_arr, @logistics_arr, @pretoria_sales_arr, @PRM_arr, @QA_arr, @strategic_accounts_arr, @telesales_arr, @travel_arr, @product_designer_arr, @cs_tl_arr, @goods_sales_arr, @logistics_manager_arr, @hr_admin_arr, @hr_trainer_arr, @marketing_arr] %>
 
 
-<% UserMailer.email(blake, @arr).deliver_now %>
+
+<% UserMailer.email(blake1, @arr).deliver_now %>
+
+<h1>Email sent<h1>
+
+
 
 
 
