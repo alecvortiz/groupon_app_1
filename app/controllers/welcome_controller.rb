@@ -3,8 +3,7 @@ class WelcomeController < ApplicationController
   include UsersHelper
   
 
-  def index
-  end
+ 
 
   def sent
 
@@ -50,7 +49,6 @@ class WelcomeController < ApplicationController
      @marketing_manager = User.where(job_title: 'Marketing Manager')
      @johannesburg_sales_manager = User.where(job_title: 'Johannesburg Sales Manager')
      @strategic_accounts_manager = User.where(job_title: 'Strategic Accounts Manager')
-     @hr_manager = User.where(job_title: "HR Manager")
      @hr_admin = User.where(job_title: 'HR Administrator')
      @hr_trainer = User.where(job_title: 'HR Trainer')
 

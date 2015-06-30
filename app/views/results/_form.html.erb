@@ -1,0 +1,28 @@
+<style type="text/css">
+	.form-sub-2{
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+</style>
+<div class="border-form-div-2">
+<%= form_for([@user, @user.results.build]) do |f| %>
+	<div class="field">
+    	<% quarter_array = ['Q1', 'Q2', 'Q3', 'Q4'] %>
+ 		<%= f.label :quarter %> <br/>
+     	 <%=f.select(:quarter, options_for_select(quarter_array), :include_blank => 'Please Select') %>
+  	</div>
+  	<div class="field">
+    	<% quarter_array = ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2025', '2026', '2027', '2028', '2029', '2030'] %>
+ 		<%= f.label :year %> <br/>
+     	 <%=f.select(:year, options_for_select(quarter_array), :include_blank => 'Please Select') %>
+  	</div>
+  	<div class="field">
+    	<%= f.label :summary %><br />
+    	<%= f.text_area :summary %>
+  	</div>
+  	<div class="field">
+  	 <%= f.submit "Submit", :class=>"btn btn-primary form-sub-2" %>
+  	</div>
+<% end %>
+</div>

@@ -4,7 +4,8 @@ class ProfilesController < ApplicationController
   end
 
   def show
-  	@profile = Profile.find_by(params[:id])
+  	@user = User.find_by(params[:user_id])
+  	@results = Result.where(user_id: @user.id)
   end
 
 

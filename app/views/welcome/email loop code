@@ -5,6 +5,10 @@
 <% end %>
 	
 
+resources :profiles, only [:index]
 
+  resources :users do
+    resources :profiles 
+  end
 
  

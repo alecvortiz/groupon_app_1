@@ -11,12 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150617131140) do
+ActiveRecord::Schema.define(version: 20150629092815) do
 
-  create_table "profiles", force: :cascade do |t|
+  create_table "results", force: :cascade do |t|
+    t.integer  "year"
+    t.string   "quarter"
+    t.text     "summary"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
+
+  add_index "results", ["user_id"], name: "index_results_on_user_id"
 
   create_table "templates", force: :cascade do |t|
     t.datetime "created_at", null: false
