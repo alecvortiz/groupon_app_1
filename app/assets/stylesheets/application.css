@@ -14,8 +14,11 @@
  *= require_self
  */
 
+.groupon_color{
+	color: #82b548;
+}
 body{
-	color: white;
+	color: black;
 }
 h1{
 	

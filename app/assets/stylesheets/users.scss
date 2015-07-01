@@ -3,16 +3,27 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body{
-	background: #5aac7b;
+	background: #fff;
 	padding: 0px 100px 100px 100px;
 	text-align: center;
 }
+
+h1{
+	
+	color: #82b548;
+}
 h2{
+	color: #82b548;
 	padding-top: 20px;
 }
 h3{
+	
 	padding-bottom: 20px;
 }
 h1{
 	padding-bottom: 20px;
+}
+
+.form{
+	background: #82b548;
 }
