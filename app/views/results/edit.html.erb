@@ -1,2 +1,22 @@
-<h1>Results#edit</h1>
-<p>Find me in app/views/results/edit.html.erb</p>
+<h1>Edit this appraisal:</h1>
+
+<%= simple_form_for([@user, @result]) do |form| %>
+
+	<p>
+		<%= form.input :quarter %>
+	</p>
+
+	<p>
+		<%= form.input :year %>
+	</p>
+
+	<p>
+		<%= form.input :summary %>
+	</p>
+
+
+	<p>
+		<%= form.button :submit %>
+	</p>
+
+<% end %>

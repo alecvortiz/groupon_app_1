@@ -14,10 +14,26 @@ end
 
  
   def destroy
-    @idea = Idea.find(params[:idea_id])
-    @comment = @idea.comments.find(params[:id])
-    @comment.destroy
-    redirect_to idea_path(@idea)
+    @result = Result.find(params[:id])
+    @result.destroy
+
+    redirect_to user_path(params[:user_id])
+  end
+
+  def edit
+    @result = Result.find(params[:id])
+    @user = User.find(@result.user_id)
+  end
+
+  def update
+    @result = Result.find(params[:id])
+    @user = User.find(@result.user_id)
+
+    if @result.save
+      redirect_to user_path(@user)
+    else
+      render :edit
+    end
   end
  
   private
