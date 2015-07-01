@@ -12,4 +12,5 @@ class UsersController < ApplicationController
 	def index
 		@users = User.order(:job_title, :first_name)
 	end
+
 end

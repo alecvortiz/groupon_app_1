@@ -7,9 +7,11 @@ Rails.application.routes.draw do
 
   devise_for :users, :path => 'accounts' 
 
-  resources :users do
+  resources :users, except: :create do
     resources :results
   end
+
+  
 
  # resources :profiles, only: [:index]
 
