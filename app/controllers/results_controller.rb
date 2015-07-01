@@ -29,7 +29,7 @@ end
     @result = Result.find(params[:id])
     @user = User.find(@result.user_id)
 
-    if @result.save
+    if @result.update(result_params)
       redirect_to user_path(@user)
     else
       render :edit
