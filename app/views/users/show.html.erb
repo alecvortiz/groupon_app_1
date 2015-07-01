@@ -34,6 +34,7 @@
 <% if current_user.role == 'admin' && @user != current_user %>
 	<p>Add an appraisal report:</p>
 	<%= render 'results/form' %>
+	<%= button_to "Delete Employee", @user, :method => :delete, data: {confirm: "Are you sure you want to delete #{@user.first_name} #{@user.last_name} from Grouppraisal?"} %><br>
 <% end %>
 </p>
 

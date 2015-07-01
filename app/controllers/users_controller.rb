@@ -13,4 +13,30 @@ class UsersController < ApplicationController
 		@users = User.order(:job_title, :first_name)
 	end
 
+	def new
+	end
+
+	def create
+		@user = User.create(user_params)
+
+		if @user.save
+			redirect_to users_path
+		else
+			render :new
+		end
+	end
+
+	def destroy
+		@user = User.find(params[:id])
+		@user.destroy
+
+		redirect_to users_path
+	end
+
+private
+	
+	def user_params
+		params.require(:user).permit(:first_name, :last_name, :job_title, :email, :password, :password_confirmation)
+	end
+
 end
