@@ -13,6 +13,11 @@
 
 ActiveRecord::Schema.define(version: 20150629092815) do
 
+  create_table "profiles", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "results", force: :cascade do |t|
     t.integer  "year"
     t.string   "quarter"

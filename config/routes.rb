@@ -5,14 +5,20 @@ Rails.application.routes.draw do
 
   get 'welcome/sent'
 
-  devise_for :users, :controllers => { registrations: 'user/registrations' } 
-
-  resources :profiles, only: [:index]
+  devise_for :users, :path => 'accounts' 
 
   resources :users do
-    resources :results 
-    resources :profiles
+    resources :results
   end
+
+ # resources :profiles, only: [:index]
+
+ # resources :users do
+ #   resources :results 
+ #   get 'profile'
+ # end
+
+
 
 
 
@@ -22,7 +28,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'profiles#show'
+  root 'users#show'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

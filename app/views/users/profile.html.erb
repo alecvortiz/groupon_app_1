@@ -1,0 +1,25 @@
+<% if current_user.role == 'admin' %>
+	<% if @user.last_name[-1] != 's' %>
+		<h1><%= @user.first_name %> <%= @user.last_name %>'s Appraisal Reports</h1>
+	<% else %>
+		<h1><%= @user.first_name %> <%= @user.last_name %>' Appraisal Reports</h1>
+	<% end %>
+<% else %>
+	<h1>Your Appraisal Reports</h1>
+<% end %>
+
+<h2>All Appraisals</h2>
+	<% if @results == nil %>
+		<p>You do not have any appraisals at this time</p>
+	<% else %>
+		<% @results.each do |result| %>
+			<strong><%= result.quarter %> <%= result.year %></strong>
+			<p><%= result.summary %> </p>
+		<% end %>
+	<% end %>
+
+
+<% if current_user.role == 'admin' %>
+	<p>Add an appraisal report:</p>
+	
+<% end %>

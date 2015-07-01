@@ -1,0 +1,10 @@
+
+<h1>Groupon SA Roster</h1>
+
+
+<% @users.each do |user| %>
+	<% name = user.first_name + " " + user.last_name %>
+	<%= link_to name, user_path(user) %> - <%= user.job_title %>
+	<br/>
+
+<% end %>

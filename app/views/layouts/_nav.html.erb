@@ -22,8 +22,8 @@
       		<a class="navbar-brand" >Grouppraisal</a>
         	<% if current_user.role == 'admin' %>
         		
-        		<li><%= link_to 'Home', root_path%></li>
-      			<li><%= link_to'Groupon, South Africa Roster', profiles_path%></li>
+        		<li><%= link_to 'Home', root_path %></li>
+      			<li><%= link_to 'Groupon, South Africa Roster', users_path %></li>
      			<li><%= link_to 'Send Appraisal Forms' , welcome_sent_path %></li>
      		<% end %>
       
