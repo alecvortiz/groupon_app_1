@@ -5,11 +5,17 @@ Rails.application.routes.draw do
 
   get 'welcome/sent'
 
+
   devise_for :users, :path => 'accounts' 
 
-  resources :users do
+
+
+  resources :users, except: :create do
     resources :results
   end
+
+  post 'create_user' => 'users#create', as: :create_user      
+
 
  # resources :profiles, only: [:index]
 

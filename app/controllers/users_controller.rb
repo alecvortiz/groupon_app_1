@@ -10,10 +10,34 @@ class UsersController < ApplicationController
 	end
 
 	def index
-		@quarter_array = ['Q1', 'Q2', 'Q3', 'Q4']
-		@year_array = ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2025', '2026', '2027', '2028', '2029', '2030'] 
-		@quarter = options_for_select(quarter_array)
-		@quarter = options_for_select(year_array)
+		
 		@users = User.order(:job_title, :first_name)
 	end
+
+	def new
+	end
+
+	def create
+		@user = User.create(user_params)
+
+		if @user.save
+			redirect_to user_path(@user)
+		else
+			render :new
+		end
+	end
+
+	def destroy
+		@user = User.find(params[:id])
+		@user.destroy
+
+		redirect_to users_path
+	end
+
+private
+	
+	def user_params
+		params.require(:user).permit(:first_name, :last_name, :job_title, :email, :password, :password_confirmation)
+	end
+
 end
