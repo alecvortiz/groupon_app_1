@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   post 'create_user' => 'users#create', as: :create_user      
   get 'reset_user' => 'users#reset', as: :reset_user 
+  get 'unclick2' => 'users#unclick2', as: :unclick2_user
 
 
  # resources :profiles, only: [:index]
