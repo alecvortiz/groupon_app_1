@@ -16,3 +16,6 @@ resources :profiles, only [:index]
 	<%= link_to 'Add New Appraisal', new_user_result_path(@user), class: "btn btn-success",  :method => :get %>
 <% end %> 
 </p>
+
+
+
