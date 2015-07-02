@@ -17,11 +17,27 @@
 .groupon_color{
 	color: #82b548;
 }
-body{
-	color: black;
-}
+
 h1{
 	
 	padding-top: 60px;
 	text-align: center;
 }
+
+.add{
+	float:right;
+	padding-top: 55px;
+}
+
+hr {
+    border: 0;
+    height: 3px; /* Firefox... */
+    background-image: linear-gradient(to right, rgba(130, 181, 72, .25), rgba(130, 181, 72, .75), rgba(130, 181, 72, .25));
+}
+
+textarea  
+{   
+   font-size: 25px;
+   padding: 10px 20px 10px 20px;   
+}
+

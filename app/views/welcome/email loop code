@@ -11,4 +11,8 @@ resources :profiles, only [:index]
     resources :profiles 
   end
 
- 
+ <p class = "form">
+<% if current_user.role == 'admin' && @user != current_user %>
+	<%= link_to 'Add New Appraisal', new_user_result_path(@user), class: "btn btn-success",  :method => :get %>
+<% end %> 
+</p>
