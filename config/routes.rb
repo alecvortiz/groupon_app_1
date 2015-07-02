@@ -11,11 +11,15 @@ Rails.application.routes.draw do
 
 
   resources :users, except: :create do
+    member do 
+      get 'unclick'
+    end
     resources :results 
   end
 
   post 'create_user' => 'users#create', as: :create_user      
   get 'reset_user' => 'users#reset', as: :reset_user 
+
 
  # resources :profiles, only: [:index]
 

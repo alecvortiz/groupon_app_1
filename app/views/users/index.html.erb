@@ -1,13 +1,13 @@
 
 
 <h1>Groupon SA Roster, <%= @count %> more appraisals to fill out</h1>
-<%= link_to 'New Quarter', reset_user_path, class: "btn btn-success",  :method => :get %>
-<br/><br/><br/>
+<%= button_to 'New Quarter', reset_user_path, class: "btn btn-success",  :method => :get %>
+<br/><br/>
 
 <% @users.each do |user| %>
 	<p class ="roster" ><% name = user.first_name + " " + user.last_name %>
-	<%= link_to name, user_path(user) %> - <%= user.job_title %>
-	<% if user.check == true %>
+	<a class ="people"><%= link_to name, user_path(user) %> - <%= user.job_title %>
+	<% if user.check == true %></a>
 		<i class="fa fa-check-square-o" style="color:#82b548"></i> 
 	<% end %>
 	</p>

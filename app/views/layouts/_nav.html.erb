@@ -25,7 +25,7 @@
         		<li><%= link_to 'Home', root_path %></li>
       			<li><%= link_to 'Roster', users_path %></li>
      			<li><%= link_to 'Send Forms' , welcome_sent_path %></li>
-          <li><%= link_to "Add Employee", new_user_path %><li>
+          <li><%= link_to 'Add User', new_user_path %><li>
      		<% end %>
       
       </ul>
@@ -33,7 +33,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
           <% if user_signed_in? %> 
-          	<br><div style="color: #82b548" >Logged in as 
+          	<br><div style="color: #82b548" >
          	<strong><%= current_user.first_name +  " "  + current_user.last_name[0] %></strong>.
           <% end %>
           </div>
