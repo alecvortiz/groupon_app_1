@@ -23,8 +23,8 @@
         	<% if current_user.role == 'admin' %>
         		
         		<li><%= link_to 'Home', root_path %></li>
-      			<li><%= link_to 'Groupon, South Africa Roster', users_path %></li>
-     			<li><%= link_to 'Send Appraisal Forms' , welcome_sent_path %></li>
+      			<li><%= link_to 'Roster', users_path %></li>
+     			<li><%= link_to 'Send Forms' , welcome_sent_path %></li>
           <li><%= link_to "Add Employee", new_user_path %><li>
      		<% end %>
       

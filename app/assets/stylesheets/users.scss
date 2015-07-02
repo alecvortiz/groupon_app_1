@@ -31,12 +31,16 @@ h1{
 .current_quarter{
 	color: #82b548;
 	font-size: 20px;
-	float:left;
-	padding-top: 55px;
-	padding-bottom:-40px;
+	text-align: center;
+	
 }
 .current_year{
 	color: #82b548;
 	font-size: 20px;
-	float:left;
+	text-align: center;
+}
+
+.btn-success{
+	border-color: #82b548;
+	background-color: #82b548;
 }

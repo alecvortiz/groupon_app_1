@@ -6,6 +6,8 @@ def create
     @result.user_id = @user.id
 
     if @result.save
+      @user.check = true
+      @user.save
       redirect_to user_path(@user)
     else
       render 'new'
