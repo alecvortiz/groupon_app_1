@@ -14,7 +14,13 @@ class UsersController < ApplicationController
 	end
 
 	def index
-		@users = User.order(:job_title, :first_name)
+		if params[:search]
+			@users = User.search_by_user_full_name(params[:search])
+		else
+			@users = User.order(:job_title, :first_name)
+			
+		end
+		
 		@count = 0
 		@users.each do |user|
 			if user.check == false
@@ -22,6 +28,8 @@ class UsersController < ApplicationController
 			end
 		end
 	end
+
+	
 
 	def new
 	end

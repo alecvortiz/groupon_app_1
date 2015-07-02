@@ -1,7 +1,15 @@
 
 
+
 <h1>Groupon SA Roster, <%= @count %> more appraisals to fill out</h1>
 <%= link_to 'New Quarter', reset_user_path, class: "btn btn-success",  :method => :get %>
+<br/><br/><br/>
+
+<%= form_tag(users_path, :method => "get", id: "search-form") do %>
+    Search by Name: <br />
+    <%= text_field_tag :search, params[:search], placeholder: "Search Employees" %>
+    <%= submit_tag "Search" %>
+<% end %>
 <br/><br/><br/>
 
 <% @users.each do |user| %>
