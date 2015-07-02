@@ -225,4 +225,15 @@ class UserMailer < ApplicationMailer
 
   	end
 
+   def signup_email(user)
+      @user = user
+
+      mail(to: @user.email,
+            subject: 'Welcome to Grouppraisal',
+            template_path: 'user_mailer',
+            template_name: 'signup_email.html')
+
+
+   end
+
 end

@@ -18,8 +18,11 @@ class UsersController < ApplicationController
 
 	def create
 		@user = User.create(user_params)
+		@user.password = "password123"
+		@user.password_confirmation = "password123"
 
 		if @user.save
+			UserMailer.signup_email(@user).deliver_now 
 			redirect_to user_path(@user)
 		else
 			render :new
