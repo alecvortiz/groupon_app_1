@@ -9,17 +9,17 @@
 <%= form_for([@user, @user.results.build]) do |f| %>
 	<div class="field">
     	<% quarter_array = ['Q1', 'Q2', 'Q3', 'Q4'] %>
- 		<%= f.label :quarter %> <br/>
+ 		<h3 style="margin-bottom:-10px"><%= f.label :quarter %> </h3>
      	 <%=f.select(:quarter, options_for_select(quarter_array), :include_blank => 'Please Select') %>
   	</div>
   	<div class="field">
-    	<% quarter_array = ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2025', '2026', '2027', '2028', '2029', '2030'] %>
- 		<%= f.label :year %> <br/>
-     	 <%=f.select(:year, options_for_select(quarter_array), :include_blank => 'Please Select') %>
+    	<% year_array = ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2025', '2026', '2027', '2028', '2029', '2030'] %>
+ 		<h3 style="margin-bottom:-10px"><%= f.label :year %></h3> 
+     	 <%=f.select(:year, options_for_select(year_array), :include_blank => 'Please Select') %>
   	</div>
   	<div class="field">
-    	<%= f.label :summary %><br />
-    	<%= f.text_area :summary %>
+    	<h3 style="margin-bottom:-10px"><%= f.label :summary %></h3>
+    	<%= f.text_area :summary, size: "75x8" %>
   	</div>
   	<div class="field">
   	 <%= f.submit "Submit", :class=>"btn btn-primary form-sub-2" %>

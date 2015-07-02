@@ -12,6 +12,11 @@ def create
     end
 end
 
+def new
+  @user = User.find(params[:user_id])
+end
+
+
  
   def destroy
     @result = Result.find(params[:id])
