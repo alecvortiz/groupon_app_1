@@ -14,14 +14,23 @@ class UsersController < ApplicationController
 	end
 
 	def index
-		@users = User.order(:job_title, :first_name)
+		if params[:search]
+			@users = User.search_by_user_full_name(params[:search])
+		
+		else
+			@users = User.order(:job_title, :first_name)
+			
+		end
+		@all = User.all
 		@count = 0
-		@users.each do |user|
+		@all.each do |user|
 			if user.check == false
 				@count += 1
 			end
 		end
 	end
+
+	
 
 	def new
 	end
@@ -30,6 +39,7 @@ class UsersController < ApplicationController
 		@user = User.create(user_params)
 		@user.password = "password123"
 		@user.password_confirmation = "password123"
+		
 
 		if @user.save
 			UserMailer.signup_email(@user).deliver_now 
