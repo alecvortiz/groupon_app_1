@@ -12,14 +12,17 @@
 <% end %>
 <br/><br/><br/>
 
+
 <% @users.each do |user| %>
-	<p class ="roster" ><% name = user.first_name + " " + user.last_name %>
-	<a class ="people"><%= link_to name, user_path(user) %> - <%= user.job_title %>
-	<% if user.check == true %></a>
-		<i class="fa fa-check-square-o" style="color:#82b548"></i> 
-	<% end %>
-	</p>
-	<br/>
+	
+		<p class ="roster" ><% name = user.first_name + " " + user.last_name %>
+		<a class ="people"><%= link_to name, user_path(user) %> - <%= user.job_title %>
+		<% if user.check == true %></a>
+			<i class="fa fa-check-square-o" style="color:#82b548"></i> 
+		<% end %>
+		</p>
+	
+	
 
 <% end %>
 

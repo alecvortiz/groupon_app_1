@@ -17,5 +17,10 @@ resources :profiles, only [:index]
 <% end %> 
 </p>
 
+<span class="glyphicons glyphicons-pencil"></span>
+<span class="glyphicons glyphicons-remove-2"></span>
+<span class="glyphicons glyphicons-remove"></span>
+
+
 
 

@@ -1,5 +1,7 @@
 <div class = "row">
 	<div class="col-xs-2">
+		<div class = "delete"> <%= button_to "Delete Employee", @user, class: "btn btn-danger", :method => :delete, data: {confirm: "Are you sure you want to delete #{@user.first_name} #{@user.last_name} from Grouppraisal?"} %>
+		</div>
 	</div>
 	<div class="col-xs-8">
 		<% if current_user != @user %>
@@ -10,7 +12,6 @@
 						<%= link_to "<i class='fa fa-check-square-o' style='color:#82b548'></i>".html_safe , unclick_user_path(@user) %> 
 					<% end %>
 				</h1> 
-				<%= button_to "Delete Employee", @user, :method => :delete, data: {confirm: "Are you sure you want to delete #{@user.first_name} #{@user.last_name} from Grouppraisal?"} %><br>
 			<% else %>
 				<h1>
 					<%= @user.first_name %> <%= @user.last_name %>' Appraisal Reports
@@ -18,7 +19,6 @@
 						<%= link_to "<i class='fa fa-check-square-o' style='color:#82b548'></i>".html_safe , unclick_user_path(@user) %> 
 					<% end %>
 				</h1>
-				<%= button_to "Delete Employee", @user, :method => :delete, data: {confirm: "Are you sure you want to delete #{@user.first_name} #{@user.last_name} from Grouppraisal?"} %><br>
 			<% end %>
 		<% else %>
 			<% if current_user.role == 'employee' %>
@@ -45,13 +45,16 @@
 <% else %>
 
 	<% @results.each do |result| %>
-		<h2><%= result.quarter %> <%= result.year %></h2>
+		<h2>
+			<%= result.quarter %> <%= result.year %>
+		</h2>
+		
 		<h3 style="color:black"><%= result.summary %> </h3>
 		<% if current_user.role == 'admin' %>
-			<%= button_to "Remove", user_result_path(result.user_id, result),  :method => :delete, data: {confirm: "Are you sure you want to delete this appraisal?"} %>
-			<%= button_to 'Edit', edit_user_result_path(result.user_id, result),  :method => :get %>
-			
+			<%= link_to "<i class='fa fa-pencil fa-lg' style='color:#82b548'></i>".html_safe , edit_user_result_path(result.user_id, result),  :method => :get %>  &nbsp
+			<%= link_to "<i class='fa fa-trash-o fa-lg' style='color:#82b548'></i>".html_safe, user_result_path(result.user_id, result),  :method => :delete, data: {confirm: "Are you sure you want to delete this appraisal?"} %>
 		<% end %>
+		
 		<% if result != @results.last %>	
 			<hr/>
 		<% end %>
