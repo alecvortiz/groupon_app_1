@@ -1,32 +1,37 @@
 <body><br><br><br><br>
   <h1>Add New Employee</h1>
 
-  <%= form_for User.new, url: create_user_path do |f| %>
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
-  </div>
 
 
-  <div class="field">
-    <% jobs_array = ['Business Intelligence', 'Cape Town Sales Manager',  'Cape Town Sales', 'CEO', 'City Planner', 'City Planner Manager', 'CS', 'CS Manager', 'CS Team Leader', 'Durban Sales', 'Durban City Manager', 'Editorial', 'Editorial Manager', 'Finance', 'Finance Manager', 'Goods Administrator', 'Goods Manager', 'Goods Sales', 'HR Manager', 'Johannesburg Sales', 'Logistics', 'Logistics Manager', 'Pretoria Sales', 'Pretoria Sales Manager', 'Product Designer', 'PRM', 'PRM Manager', 'QA', 'Sales Manager', 'Strategic Accounts', 'Telesales', 'Telesales Manager', 'Travel', 'Business Intelligence Manager', 'Marketing Associate', 'Marketing Manager', 'Johannesburg Sales Manager', 'Strategic Accounts Manager', 'HR Trainer', 'HR Administrator'] %>
-    <%= f.label :title%><br />
-    <%=f.select(:job_title, options_for_select(jobs_array), :include_blank => 'Please Select') %></div>
+  <%= simple_form_for User.new, url: create_user_path do |f| %>
+    <div class="field">
+      <%= f.input :first_name, placeholder: "First Name" %>
+    </div>
 
     <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true %>
+      <%= f.input :last_name, placeholder: "Last Name" %>
     </div>
 
 
-<br>
+    <div class="field">
+      <%= f.input :job_title, collection: ['Business Intelligence', 'Cape Town Sales Manager',  'Cape Town Sales', 'CEO', 'City Planner', 'City Planner Manager', 'CS', 'CS Manager', 'CS Team Leader', 'Durban Sales', 'Durban City Manager', 'Editorial', 'Editorial Manager', 'Finance', 'Finance Manager', 'Goods Administrator', 'Goods Manager', 'Goods Sales', 'HR Manager', 'Johannesburg Sales', 'Logistics', 'Logistics Manager', 'Pretoria Sales', 'Pretoria Sales Manager', 'Product Designer', 'PRM', 'PRM Manager', 'QA', 'Sales Manager', 'Strategic Accounts', 'Telesales', 'Telesales Manager', 'Travel', 'Business Intelligence Manager', 'Marketing Associate', 'Marketing Manager', 'Johannesburg Sales Manager', 'Strategic Accounts Manager', 'HR Trainer', 'HR Administrator'], placeholder: "Job Title" %>
+    </div>
+
+    <div class="field">
+      <%= f.input :email, placeholder: "Email Address" %>
+    </div>
+
+    <div class="field">
+      <%= f.input :role, as: :string, label: "Check box to make admin:" do %>
+        <%= f.check_box :role, {}, "admin", "employee" %>
+      <% end %>
+    </div>
+
+
+    <br>
+
     <div class="actions">
-    <%= f.submit "Add Employee" %>
+      <%= f.button :submit, "Add Employee" %>
     </div>
     <% end %>
 

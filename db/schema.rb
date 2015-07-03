@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150702090700) do
+ActiveRecord::Schema.define(version: 20150703083542) do
 
   create_table "profiles", force: :cascade do |t|
     t.datetime "created_at", null: false
