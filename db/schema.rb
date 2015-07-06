@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150703083542) do
+ActiveRecord::Schema.define(version: 20150706082432) do
 
   create_table "profiles", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -48,9 +48,9 @@ ActiveRecord::Schema.define(version: 20150703083542) do
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.integer  "role",                   default: 0
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "job_title"
+    t.string   "first_name",                             null: false
+    t.string   "last_name",                              null: false
+    t.string   "job_title",                              null: false
     t.boolean  "check",                  default: false
   end
 
