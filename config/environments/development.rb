@@ -45,8 +45,10 @@ config.action_mailer.smtp_settings = {
   address: 'smtp.gmail.com',
   port: 587,
   domain: 'gmail.com',
-  user_name: 'grouponappraisals@gmail.com',
-  password: 'iXperience',
+  user_name: 'app38575726@heroku.com
+',
+  password: 'zm2k8smr7606
+',
   authentication: 'plain',
   enable_starttls_auto: true }
 
