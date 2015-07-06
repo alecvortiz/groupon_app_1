@@ -1,10 +1,12 @@
 class User::RegistrationsController < Devise::RegistrationsController
 	# before_filter :authenticate_user!, :except => [:require_no_authentication]
  	# skip_before_filter :require_no_authentication
+   
 
   	def check_permissions
     	authorize! :create, resource
   	end
+    
 
 	private
   	
