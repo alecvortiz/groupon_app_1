@@ -76,4 +76,17 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  config.action_mailer.default_url_options = {  :host => "https://calm-beyond-3762.herokuapp.com" }
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.perform_deliveries = true
+config.action_mailer.smtp_settings = {
+  address: 'smtp.mandrillapp.com',
+  port: 25,
+ :authentication => :plain,
+ :user_name=>"app38575726@heroku.com\n",
+  :password=>"IiC3MIEw1BSpcX0qoF_XmQ\n\n",
+
+ :domain         => 'heroku.com',
+  :enable_starttls_auto => true
+}
 end
