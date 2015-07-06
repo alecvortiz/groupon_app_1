@@ -42,15 +42,16 @@ config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 config.action_mailer.delivery_method = :smtp
 config.action_mailer.perform_deliveries = true
 config.action_mailer.smtp_settings = {
-  address: 'smtp.gmail.com',
+  address: 'smtp.sendgrid.net',
   port: 587,
-  domain: 'gmail.com',
+ :authentication => :plain,
   user_name: 'app38575726@heroku.com
 ',
   password: 'zm2k8smr7606
 ',
-  authentication: 'plain',
-  enable_starttls_auto: true }
+ :domain         => 'heroku.com',
+  :enable_starttls_auto => true
+}
 
 
 end
