@@ -9,9 +9,13 @@ body{
 }
 
 h1{
-	
+	padding-top: 60px;
+	padding-bottom: 20px;
+	text-align: center;
+	font-family: 'Raleway', sans-serif;
 	color: #82b548;
 }
+
 h2{
 	color: #82b548;
 	padding-top: 20px;
@@ -20,8 +24,11 @@ h3{
 	color: #82b548;
 	padding-bottom: 20px;
 }
-h1{
-	padding-bottom: 20px;
+
+
+h4 {
+	padding-left: 15px;
+	padding-right: 15px;
 }
 
 .roster{
@@ -48,6 +55,37 @@ h1{
 a, a:hover, a:active, a:visited { 
 	color: #82b548; 
 }
+
+.groupon_color{
+	color: #82b548;
+}
+
+
+
+.add{
+	float:right;
+	padding-top: 55px;
+}
+
+.delete{
+	float:left;
+	padding-top: 85px;
+}
+
+hr {
+    border: 0;
+    height: 3px; /* Firefox... */
+    background-image: linear-gradient(to right, rgba(130, 181, 72, .25), rgba(130, 181, 72, .75), rgba(130, 181, 72, .25));
+}
+
+textarea  
+{   
+   font-size: 25px;
+   padding: 10px 20px 10px 20px;   
+}
+
+
+
 
 
 

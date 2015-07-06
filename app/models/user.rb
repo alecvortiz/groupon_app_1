@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 	end
 
 	def self.search_by_user_full_name(query)
-    	where("(first_name || ' ' || last_name || job_title) LIKE :q", :q => "%#{query}%")
+    	where("(first_name || ' ' || last_name || job_title ) LIKE :q", :q => "%#{query}%")
 
   	end
   # Include default devise modules. Others available are:

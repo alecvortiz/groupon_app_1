@@ -1,12 +1,14 @@
 <% blake1 = User.find_by(email: 'baaltman@umich.edu') %>
-<% blake2 = User.find_by(email: 'blakealtman123@yahoo.com') %>
-<% blake3 = User.find_by(email: 'blakealtman123@gmail.com') %>
+<% blake2 = User.find_by(email: 'blakealtman123@gmail.com') %>
+<% blake3 = User.find_by(email: 'blakealtman123@yahoo.com') %>
 <% olivia1 = User.find_by(email: 'olivia.bicks@gmail.com') %>
 <% olivia2 = User.find_by(email: 'obicks95@yahoo.com') %>
 <% olivia3 = User.find_by(email: 'ohb3fs@virginia.edu') %>
 <% sophie1 = User.find_by(email: 'socialthon@gmail.com') %>
 <% sophie2 = User.find_by(email: 'taozining@hotmail.com') %>
 <% sophie3 = User.find_by(email: 'yt5ny@virginia.edu') %>
+<% charlotte1 = User.find_by(email: 'css7kv@virginia.edu') %>
+<% charlotte2 = User.find_by(email: 'charbar0117@aim.com') %>
 
  		<% @bus_intel_arr = [] %>
 	    <% @bus_intel.each do |person| %>
@@ -152,6 +154,7 @@
 
 
 <% UserMailer.email(blake1, @arr).deliver_now %>
+
 
 <h1>Email sent<h1>
 

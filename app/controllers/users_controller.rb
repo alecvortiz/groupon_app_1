@@ -75,6 +75,14 @@ class UsersController < ApplicationController
 		redirect_to user_path(@user)
 	end
 
+	def click
+		@user = User.find(params[:id])
+		@user.check = true
+		@user.save
+
+		redirect_to user_path(@user)
+	end
+
 
 private
 	

@@ -3,11 +3,12 @@
 <html>
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <link href='http://fonts.googleapis.com/css?family=Raleway:800' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag '/stylesheets/welcome_email' %>
   </head>
-  <body style="color:#5aac7b">
 
-
-    <h1>It's appraisal time, <%= @user.first_name %> <%= @user.last_name %>!</h1>
+  <body>
+    <h1>It's Appraisal Time <%= @user.first_name %>!</h1>
     <p>
 
     <% if @user.job_title == 'Business Intelligence' %>
@@ -324,11 +325,13 @@
     <% if @user.job_title == 'Product Designer' %> 
       <% @reviewee = peer_forms(@product_designer_arr) %>
       <% if @reviewee.first_name != "me" %>
-        Please fill out this form for <strong><%= @reviewee.first_name %> <%= @reviewee.last_name %></strong><br/>
+        Please fill out this form for <strong><%= @reviewee.first_name %> <%= @reviewee.last_name %></strong><br/><br/>
         <%= @url_product_designer_peer %><br/><br/>
       <% end %>
-        Please assess your own performance<br/><br/>
-        <%= @url_product_designer_peer %><br/><br/>
+
+      Please assess your own performance<br/><br/>
+      <%= @url_product_designer_peer %><br/><br/>
+
     <% end %>
 
 

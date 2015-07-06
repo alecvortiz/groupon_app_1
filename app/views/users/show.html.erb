@@ -1,7 +1,11 @@
 <div class = "row">
 	<div class="col-xs-2">
-		<div class = "delete"> <%= button_to "Delete Employee", @user, class: "btn btn-danger", :method => :delete, data: {confirm: "Are you sure you want to delete #{@user.first_name} #{@user.last_name} from Grouppraisal?"} %>
-		</div>
+		<% if current_user.role == 'admin' %>
+			<% if @user.role == 'employee' %>
+				<div class = "delete"> <%= button_to "Delete Employee", @user, class: "btn btn-danger", :method => :delete, data: {confirm: "Are you sure you want to delete #{@user.first_name} #{@user.last_name} from Grouppraisal?"} %>
+				</div>
+			<% end %>
+		<% end %> 
 	</div>
 	<div class="col-xs-8">
 		<% if current_user != @user %>
@@ -9,7 +13,9 @@
 				<h1>
 					<%= @user.first_name %> <%= @user.last_name %>'s Appraisal Reports 
 					<% if @user.check == true %>
-						<%= link_to "<i class='fa fa-check-square-o' style='color:#82b548'></i>".html_safe , unclick_user_path(@user) %> 
+						<%= link_to "<i class='fa fa-check-square-o' style='color:#82b548'></i>".html_safe , unclick_user_path(@user) %>
+					<% else %>
+					 	<%= link_to "<i class='fa fa-square-o' style='color:#82b548'></i>".html_safe , click_user_path(@user) %>
 					<% end %>
 				</h1> 
 			<% else %>
@@ -22,8 +28,12 @@
 			<% end %>
 		<% else %>
 			<% if current_user.role == 'employee' %>
-				<h1>Your Appraisal Reports</h1>
-			<% else %>
+				<% if @results.empty? %>
+					<h1>You do not have any appraisals at this time</h1>
+				<% else %>
+					<h1>Your Appraisal Reports</h1>
+				<% end %>
+			<% else %> 
 				<h1>Hey <%= current_user.first_name %>!</h1>
 			<% end %>
 		<% end %>
@@ -37,12 +47,7 @@
 </div>
 
 
-<% if @results.empty? %>
-	<% if current_user.role != 'admin' %>
-		<h2>You do not have any appraisals at this time</h2>
-	<% end %>
-
-<% else %>
+<% if !@results.empty? %>
 
 	<% @results.each do |result| %>
 		<h2>
