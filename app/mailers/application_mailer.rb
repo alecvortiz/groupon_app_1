@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "grouponappraisals@gmail.com"
+  default from: "app38575726@heroku.com"
   layout 'mailer'
 end
