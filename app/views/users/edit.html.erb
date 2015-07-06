@@ -26,7 +26,11 @@
     </div>
 
 
- 
+  <div class="field">
+      <%= f.input :role, as: :string, label: "Check box to make admin:" do %>
+        <%= f.check_box :role, {}, "admin", "employee" %>
+      <% end %>
+  </div>
 
 
     <div class="actions">
