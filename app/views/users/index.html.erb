@@ -6,8 +6,8 @@
 <br/><br/>
 
 <%= form_tag(users_path, :method => "get", id: "search-form") do %>
-    Search by Name: <br />
-    <%= text_field_tag :search, params[:search], placeholder: "Search Employees" %>
+    <b/>Search by Name or Job Title: <br />
+    <%= text_field_tag :search, params[:search], placeholder: "Search" %>
     <%= submit_tag "Search" %>
 <% end %>
 <br/><br/><br/>
