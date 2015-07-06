@@ -1,0 +1,52 @@
+<style>
+  body{
+    text-align: center;
+  }
+</style>
+
+<body>
+
+<h2>Edit <%= "#{@user.first_name} #{@user.last_name}" %></h2>
+
+<%= simple_form_for(@user, url: user_path(@user), html: { method: :put }) do |f| %>
+  
+
+  <div class="field">
+    <%= f.input :first_name %>
+  </div>
+
+  <div class="field">
+    <%= f.input :last_name %>
+  </div>
+
+  
+
+   <div class="field">
+      <%= f.input :job_title, collection: ['Business Intelligence', 'Cape Town Sales Manager',  'Cape Town Sales', 'CEO', 'City Planner', 'City Planner Manager', 'CS', 'CS Manager', 'CS Team Leader', 'Durban Sales', 'Durban City Manager', 'Editorial', 'Editorial Manager', 'Finance', 'Finance Manager', 'Goods Administrator', 'Goods Manager', 'Goods Sales', 'HR Manager', 'Johannesburg Sales', 'Logistics', 'Logistics Manager', 'Pretoria Sales', 'Pretoria Sales Manager', 'Product Designer', 'PRM', 'PRM Manager', 'QA', 'Sales Manager', 'Strategic Accounts', 'Telesales', 'Telesales Manager', 'Travel', 'Business Intelligence Manager', 'Marketing Associate', 'Marketing Manager', 'Johannesburg Sales Manager', 'Strategic Accounts Manager', 'HR Trainer', 'HR Administrator'] %>
+    </div>
+
+
+ 
+
+    <div class="field">
+      <%= f.input :password, input_html: { autocomplete: 'off' } %> <i>(leave blank if you don't want to change it)</i>
+    </div>
+
+    <div class="field">
+      <%= f.input :password_confirmation, input_html: { autocomplete: 'off' } %>
+    </div>
+
+    <div class="field">
+      <%= f.input :current_password, input_html: { autocomplete: 'off' } %> <i>(we need your current password to confirm your changes)</i>
+    </div>
+
+    <div class="actions">
+      <%= f.button :submit, "Update" %>
+    </div>
+
+<% end %>
+
+
+<%= link_to "Back", :back %>
+
+</body>
