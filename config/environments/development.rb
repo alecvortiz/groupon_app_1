@@ -43,7 +43,7 @@ config.action_mailer.delivery_method = :smtp
 config.action_mailer.perform_deliveries = true
 config.action_mailer.smtp_settings = {
   address: 'smtp.mandrillapp.com',
-  port: 587,
+  port: 25,
  :authentication => :plain,
   user_name: 'app38575726@heroku.com
 ',
