@@ -1,7 +1,10 @@
 <style>
   body{
     text-align: center;
+    padding: 20px;
   }
+
+
 </style>
 
 <body>
@@ -42,7 +45,7 @@
 
 <%= link_to "Back", :back %><br>
 
-<div class = "delete"> <%= button_to "Delete Employee", @user, class: "btn btn-danger", :method => :delete, data: {confirm: "Are you sure you want to delete #{@user.first_name} #{@user.last_name} from Grouppraisal?"} %>
+<div align="center"> <%= button_to "Delete Employee", @user, class: "btn btn-danger", :method => :delete, data: {confirm: "Are you sure you want to delete #{@user.first_name} #{@user.last_name} from Grouppraisal?"} %>
         </div>
 
 </body>

@@ -1,6 +1,7 @@
 <style>
   body{
     text-align: center;
+    padding: 20px;
   }
 </style>
 
@@ -8,25 +9,21 @@
 
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
   <% if current_user.role == 'admin' %>
 
     <div class="field">
-      <%= f.label :first_name %><br />
-      <%= f.text_field :first_name %>
+      <%= f.input :first_name %>
     </div>
 
     <div class="field">
-      <%= f.label :last_name %><br />
-      <%= f.text_field :last_name %>
+      <%= f.input :last_name %>
     </div>
 
    <div class="field">
-      <% jobs_array = ['Business Intelligence', 'Cape Town Sales Manager',  'Cape Town Sales', 'CEO', 'City Planner', 'City Planner Manager', 'CS', 'CS Manager', 'CS Team Leader', 'Durban Sales', 'Durban City Manager', 'Editorial', 'Editorial Manager', 'Finance', 'Finance Manager', 'Goods Administrator', 'Goods Manager', 'Goods Sales', 'HR Manager', 'Johannesburg Sales', 'Logistics', 'Logistics Manager', 'Pretoria Sales', 'Pretoria Sales Manager', 'Product Designer', 'PRM', 'PRM Manager', 'QA', 'Sales Manager', 'Strategic Accounts', 'Telesales', 'Telesales Manager', 'Travel', 'Business Intelligence Manager', 'Marketing Associate', 'Marketing Manager', 'Johannesburg Sales Manager', 'Strategic Accounts Manager', 'HR Trainer', 'HR Administrator'] %>
-      <%= f.label :title%><br />
-      <%=f.select(:job_title, options_for_select(jobs_array), :include_blank => 'Please Select') %>
+      <%= f.input :job_title, collection: ['Business Intelligence', 'Cape Town Sales Manager',  'Cape Town Sales', 'CEO', 'City Planner', 'City Planner Manager', 'CS', 'CS Manager', 'CS Team Leader', 'Durban Sales', 'Durban City Manager', 'Editorial', 'Editorial Manager', 'Finance', 'Finance Manager', 'Goods Administrator', 'Goods Manager', 'Goods Sales', 'HR Manager', 'Johannesburg Sales', 'Logistics', 'Logistics Manager', 'Pretoria Sales', 'Pretoria Sales Manager', 'Product Designer', 'PRM', 'PRM Manager', 'QA', 'Sales Manager', 'Strategic Accounts', 'Telesales', 'Telesales Manager', 'Travel', 'Business Intelligence Manager', 'Marketing Associate', 'Marketing Manager', 'Johannesburg Sales Manager', 'Strategic Accounts Manager', 'HR Trainer', 'HR Administrator'] %>
     </div>
   <% end %>
 
@@ -36,18 +33,15 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.input :password %> <i>(leave blank if you don't want to change it)</i>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.input :password_confirmation %>
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
+    <%= f.input :current_password %> <i>(we need your current password to confirm your changes)</i>
   </div>
 
   <div class="actions">
