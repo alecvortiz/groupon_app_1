@@ -45,11 +45,9 @@ config.action_mailer.smtp_settings = {
   address: 'smtp.mandrillapp.com',
   port: 25,
  :authentication => :plain,
-  user_name: 'app38575726@heroku.com
-',
-  password: 'IiC3MIEw1BSpcX0qoF_XmQ
+ :user_name=>"app38575726@heroku.com\n",
+  :password=>"IiC3MIEw1BSpcX0qoF_XmQ\n\n",
 
-',
  :domain         => 'heroku.com',
   :enable_starttls_auto => true
 }
