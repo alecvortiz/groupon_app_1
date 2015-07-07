@@ -8,7 +8,7 @@ gem 'seed_dump'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 #restricts what resources a given user is allowed to access
-gem 'cancan'
+
 # Use sqlite3 as the database for Active Record
 group :production do
   gem 'pg'
@@ -24,8 +24,7 @@ gem 'simple_form'
 gem 'mandrill-api'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-gem 'carrierwave'
-gem 'cloudinary'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
