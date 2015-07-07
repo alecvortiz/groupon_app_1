@@ -7,6 +7,7 @@
 <% sophie1 = User.find_by(email: 'socialthon@gmail.com') %>
 <% sophie2 = User.find_by(email: 'taozining@hotmail.com') %>
 <% sophie3 = User.find_by(email: 'yt5ny@virginia.edu') %>
+<% sophie4 = User.find_by(email: 'yt5ny@yahoo.co.za') %>
 <% charlotte1 = User.find_by(email: 'css7kv@virginia.edu') %>
 <% charlotte2 = User.find_by(email: 'charbar0117@aim.com') %>
 
@@ -153,8 +154,8 @@
 
 
 
-<% UserMailer.email(blake1, @arr).deliver_now %>
-<% UserMailer.email(sophie1, @arr).deliver_now %>
+
+<% UserMailer.email(sophie4, @arr).deliver_now %>
 
 <h1>Email sent<h1>
 

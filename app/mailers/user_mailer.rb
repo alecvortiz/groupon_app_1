@@ -109,11 +109,11 @@ class UserMailer < ApplicationMailer
       @url_CS_tl_supervisor = "https://docs.google.com/forms/d/1eLU53T2dvNQQbHyyFDx4P7J6tqb43DXrnWQx_Jkkv6E/viewform"
       @url_CS_manager_peer = "https://docs.google.com/forms/d/1cYgqlBppS3vDloWKQZaLMd1-L3yOAXYFCQ071Ve-9Ho/viewform"
 
-      @url_durban_manager_subordinate = "https://docs.google.com/forms/d/1vClMBo4sIRjDb0qzemurTyZNRMrycYbuG9rBLD-DmAk/viewform"
-      @url_durban_sales_peer = "https://docs.google.com/forms/d/1BYWTLShzhgdiG8R3UIZxexZ78DnnqN0esS-SnkaJ4dI/viewform"
+      @url_durban_manager_subordinate = 'http://docs.google.com/forms/d/1vClMBo4sIRjDb0qzemurTyZNRMrycYbuG9rBLD-DmAk/viewform'
+      @url_durban_sales_peer = 'http://docs.google.com/forms/d/1BYWTLShzhgdiG8R3UIZxexZ78DnnqN0esS-SnkaJ4dI/viewform'
       
-      @url_durban_sales_supervisor = "https://docs.google.com/forms/d/1l1uPSxRFlNbwPTXZdeIyx6FEZ9mfgSXMowkun54D33Y/viewform"
-      @url_durban_sales_manager_peer = "https://docs.google.com/forms/d/1O0OgdqHyRfm2y1kouF6KiM2sFgUpXB20h4KAZQ8X3j4/viewform"
+      @url_durban_sales_supervisor = 'http://docs.google.com/forms/d/1l1uPSxRFlNbwPTXZdeIyx6FEZ9mfgSXMowkun54D33Y/viewform'
+      @url_durban_sales_manager_peer = 'http://docs.google.com/forms/d/1O0OgdqHyRfm2y1kouF6KiM2sFgUpXB20h4KAZQ8X3j4/viewform'
 
       @url_editorial_manager_subordinate = "https://docs.google.com/forms/d/1obtXv0AlwfuhDlSfTnma6LavduXGx8kesWsm1ZLLCns/viewform"
       @url_editorial_peer = "https://docs.google.com/forms/d/18SASiBO28xb-JEt6rpPWcT8wg8GMw3P8XWEHza6C8eY/viewform"
@@ -166,7 +166,7 @@ class UserMailer < ApplicationMailer
       @url_QA_peer = "https://docs.google.com/forms/d/153eLIwIuu5ypCu_Jcj59Fy6eJxoQ4gFT5C_Ipy2ayZI/viewform"
       
       @url_sales_manager_peer = "https://docs.google.com/forms/d/1rIJ3HJhIU4HKZrpiQmmcUKDE-G_4_4dWskHCNmaLpiI/viewform"
-      @url_durban_manager_supervisor = "https://docs.google.com/forms/d/1vClMBo4sIRjDb0qzemurTyZNRMrycYbuG9rBLD-DmAk/viewform"
+      @url_durban_manager_supervisor = 'http://docs.google.com/forms/d/1vClMBo4sIRjDb0qzemurTyZNRMrycYbuG9rBLD-DmAk/viewform'
       @url_ct_manager_supervisor = "https://docs.google.com/forms/d/1u1asG8Z_NVQ_AfVhlBFCsS9pwiR1B_Lx0pi6E1NLHhs/viewform"
       @url_pretoria_sales_manager_supervisor = "https://docs.google.com/forms/d/1z6I9i523yWY5WWzN8Oaw-qFAMHL4dOhC8aeaKKKdnjQ/viewform"
       @url_johannesburg_sales_manager_supervisor = "https://docs.google.com/forms/d/1F8Rg2mMnt5hwjA7f-Qiq71yLzEPj9xkg2zhhz0ccp9g/viewform"
