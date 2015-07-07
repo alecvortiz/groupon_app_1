@@ -1,12 +1,10 @@
 
 
-
 <% blake1 = User.find_by(email: 'baaltman@umich.edu') %>
-
-
 
 <% UserMailer.email(blake1, @arr).deliver_now %>
 
+<% UserMailer.email(sophie4, @arr).deliver_now %>
 
 
 <h1>All Emails are qued to send<h1>

@@ -38,17 +38,19 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+config.action_mailer.default_url_options = {  :host => "calm-beyond-3762.herokuapp.com" }
 config.action_mailer.delivery_method = :smtp
 config.action_mailer.perform_deliveries = true
 config.action_mailer.smtp_settings = {
-  address: 'smtp.gmail.com',
-  port: 587,
-  domain: 'gmail.com',
-  user_name: 'grouponappraisals@gmail.com',
-  password: 'iXperience',
-  authentication: 'plain',
-  enable_starttls_auto: true }
+  address: 'smtp.mandrillapp.com',
+  port: 25,
+ :authentication => :plain,
+ :user_name=>"app38575726@heroku.com",
+  :password=>"IiC3MIEw1BSpcX0qoF_XmQ",
+
+ :domain         => 'heroku.com',
+  :enable_starttls_auto => true
+}
 
 
 end

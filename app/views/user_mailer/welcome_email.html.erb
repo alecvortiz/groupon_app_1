@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-    <link href='http://fonts.googleapis.com/css?family=Raleway:800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:800' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag '/stylesheets/welcome_email' %>
   </head>
 
@@ -145,10 +145,17 @@
     <% if @user.job_title == 'Durban City Manager' %>
       Fill this form out for your manager<br/><br/>
       <%= @url_sales_manager_subordinate %><br/><br/>
+      <img alt="" src="http://mysite.com/assets/foo.jpg" >
       Fill this form out for all members of your sales team<br/><br/>
       <%= @url_durban_sales_supervisor %><br/><br/>
+<<<<<<< HEAD
+       <img alt="" src="http://mysite.com/assets/foo.jpg" >
+      Please assess your own performance<br/><br/>
+=======
       <font color=#82b548> Please assess your own performance</font><br/><br/>
+>>>>>>> 452ed7a4107eaf6478df565fb24a506266d0a014
       <%= @url_durban_sales_manager_peer %><br/><br/>
+       <img alt="" src="http://mysite.com/assets/foo.jpg" >
     <% end %>
 
 
