@@ -2,6 +2,7 @@ User.delete_all
 
 User.create!([
 
+
   {email: "baaltman@umich.edu", password: "password", password_confirmation: "password", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2015-06-18 13:36:19", last_sign_in_at: "2015-06-18 13:36:19", current_sign_in_ip: "::1", last_sign_in_ip: "::1", role: 0, first_name: "Blake", last_name: "Altman1", job_title: "PRM Manager"},
   {email: "blakealtman123@gmail.com", password: "password", password_confirmation: "password", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2015-06-18 13:36:19", last_sign_in_at: "2015-06-18 13:36:19", current_sign_in_ip: "::1", last_sign_in_ip: "::1", role: 0, first_name: "Blake", last_name: "Altman2", job_title: "Telesales Manager"},
   {email: "ohb3fs@virginia.edu", password: "password", password_confirmation: "password", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2015-06-18 13:36:47", last_sign_in_at: "2015-06-18 13:36:47", current_sign_in_ip: "::1", last_sign_in_ip: "::1", role: 0, first_name: "Olivia", last_name: "Bicks1", job_title: "Travel"},
@@ -10,6 +11,7 @@ User.create!([
   {email: "socialthon@gmail.com", password: "password", password_confirmation: "password", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2015-06-18 13:36:47", last_sign_in_at: "2015-06-18 13:36:47", current_sign_in_ip: "::1", last_sign_in_ip: "::1", role: 0, first_name: "Sophie", last_name: "Tao2", job_title: "Marketing Manager"},
   {email: "taozining@hotmail.com", password: "password", password_confirmation: "password", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2015-06-18 13:36:47", last_sign_in_at: "2015-06-18 13:36:47", current_sign_in_ip: "::1", last_sign_in_ip: "::1", role: 0, first_name: "Sophie", last_name: "Tao3", job_title: "Strategic Accounts Manager"},
   
+
 
   {email: "mariscia.claasen@test.com", password: "password", password_confirmation: "password", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2015-06-18 13:14:03", last_sign_in_at: "2015-06-18 13:14:03", current_sign_in_ip: "::1", last_sign_in_ip: "::1", role: 0, first_name: "Meriscia ", last_name: "Claasen", job_title: "Logistics"},
   {email: "css7kv@virginia.edu", password: "password", password_confirmation: "password", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2015-06-18 13:16:04", last_sign_in_at: "2015-06-18 13:16:04", current_sign_in_ip: "::1", last_sign_in_ip: "::1", role: 0, first_name: "John ", last_name: "Clark", job_title: "Logistics Manager"},
