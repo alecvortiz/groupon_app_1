@@ -2,7 +2,7 @@
 	<div class="col-xs-2">
 		<% if current_user.role == 'admin' %>
 			<% if @user.role == 'employee' %>
-				<div class = "delete"> <%= button_to "Delete Employee", @user, class: "btn btn-danger", :method => :delete, data: {confirm: "Are you sure you want to delete #{@user.first_name} #{@user.last_name} from Grouppraisal?"} %>
+				<div class = "delete"><%= button_to 'Edit Employee', edit_user_path(@user), class: "btn btn-danger",  :method => :get %>
 				</div>
 			<% end %>
 		<% end %> 
@@ -11,13 +11,14 @@
 		<% if current_user != @user %>
 			<% if @user.last_name[-1] != 's' %>
 				<h1>
-					<%= @user.first_name %> <%= @user.last_name %>'s Appraisal Reports 
+					<%= @user.first_name %> <%= @user.last_name %>'s Appraisal Reports
 					<% if @user.check == true %>
 						<%= link_to "<i class='fa fa-check-square-o' style='color:#82b548'></i>".html_safe , unclick_user_path(@user) %>
 					<% else %>
 					 	<%= link_to "<i class='fa fa-square-o' style='color:#82b548'></i>".html_safe , click_user_path(@user) %>
 					<% end %>
 				</h1> 
+				
 			<% else %>
 				<h1>
 					<%= @user.first_name %> <%= @user.last_name %>' Appraisal Reports
@@ -25,16 +26,19 @@
 						<%= link_to "<i class='fa fa-check-square-o' style='color:#82b548'></i>".html_safe , unclick_user_path(@user) %> 
 					<% end %>
 				</h1>
+				<h2><%= @user.job_title %></h2>
 			<% end %>
 		<% else %>
 			<% if current_user.role == 'employee' %>
 				<% if @results.empty? %>
-					<h1>You do not have any appraisals at this time</h1>
+					<h1><%= current_user.first_name %>, you do not have any appraisals at this time</h1>
 				<% else %>
 					<h1>Your Appraisal Reports</h1>
+					<h2><%= @user.job_title %></h2>
 				<% end %>
 			<% else %> 
 				<h1>Hey <%= current_user.first_name %>!</h1>
+				<h2><%= @user.job_title %></h2>
 			<% end %>
 		<% end %>
 	</div>

@@ -83,11 +83,30 @@ class UsersController < ApplicationController
 		redirect_to user_path(@user)
 	end
 
+	def edit
+		@user = User.find(params[:id])
+	end
+
+	def update
+		@user = User.find(params[:id])
+
+		if @user.update(edit_user_params)
+			redirect_to user_path(@user)
+		else
+			render :edit
+		end
+	end
+
+
 
 private
 	
 	def user_params
-		params.require(:user).permit(:first_name, :last_name, :job_title, :email, :password, :password_confirmation, :role)
+		params.require(:user).permit(:first_name, :last_name, :job_title, :email, :password, :password_confirmation, :role, :current_password)
+	end
+
+	def edit_user_params
+		params.require(:user).permit(:first_name, :last_name, :job_title, :role)
 	end
 
 end
