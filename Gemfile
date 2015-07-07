@@ -7,6 +7,8 @@ gem 'devise'
 gem 'seed_dump'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
+#restricts what resources a given user is allowed to access
+gem 'cancan'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
