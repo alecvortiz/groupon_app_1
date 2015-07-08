@@ -3,18 +3,18 @@
 
 
 
-  <%= simple_form_for User.new, url: create_user_path do |f| %>
+  <%= simple_form_for @user, url: create_user_path do |f| %>
 
   <% if @user != nil %>
     <% if @user.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-        <ul>
-          <% @user.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
     <% end %>
   <% end %>
 

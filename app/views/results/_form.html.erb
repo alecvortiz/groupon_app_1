@@ -6,7 +6,7 @@
 	}
 </style>
 <div class="border-form-div-2">
-<%= simple_form_for([@user, @user.results.build]) do |f| %>
+<%= simple_form_for @result, url: user_results_path, method: :post do |f| %>
 
   <% if @result != nil %>
     <% if @result.errors.any? %>
@@ -31,7 +31,7 @@
   <%= f.input :summary %>
 </div>
 <div class="field">
-  <%= f.button :submit, "Update Appraisal", :class=>"btn btn-success form-sub-2" %>
+  <%= f.button :submit, "Create Appraisal", :class=>"btn btn-success form-sub-2" %>
 </div>
 
 <% end %>
