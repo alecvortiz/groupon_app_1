@@ -2,22 +2,30 @@
 
 <%= simple_form_for([@user, @result]) do |f| %>
 
-<div class="field">
-    	<% quarter_array = ['Q1', 'Q2', 'Q3', 'Q4'] %>
- 		<h3 style="margin-bottom:-10px"><%= f.label :quarter %> </h3>
-     	 <%=f.select(:quarter, options_for_select(quarter_array)) %>
+    <% if @result.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@result.errors.count, "error") %> prohibited this user from being saved:</h2>
+        <ul>
+          <% @result.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+
+
+    <div class="field">
+      <%= f.input :quarter, collection: ['Q1', 'Q2', 'Q3', 'Q4'] %>
   	</div>
   	<div class="field">
-    	<% quarter_array = ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2025', '2026', '2027', '2028', '2029', '2030'] %>
- 		<h3 style="margin-bottom:-10px"><%= f.label :year %></h3> 
-     	 <%=f.select(:year, options_for_select(quarter_array)) %>
+      <%= f.input :year, collection: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2025', '2026', '2027', '2028', '2029', '2030'] %>
   	</div>
   	<div class="field">
-    	<h3 style="margin-bottom:-10px"><%= f.label :summary %></h3>
-    	<%= f.text_area :summary, size: "75x8" %>
+      <br><%= f.input :summary %>
   	</div>
   	<div class="field">
-  	 <%= f.submit "Submit", :class=>"btn btn-success form-sub-2" %>
+  	 <%= f.button :submit, "Update Appraisal", :class=>"btn btn-success form-sub-2" %>
   	</div>
 
 <% end %>

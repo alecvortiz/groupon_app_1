@@ -5,6 +5,8 @@ gem 'nokogiri'
 gem 'twitter-bootstrap-rails'
 gem 'devise'
 gem 'seed_dump'
+#for error messages
+gem 'dynamic_form'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 #restricts what resources a given user is allowed to access
