@@ -33,9 +33,11 @@ class UsersController < ApplicationController
 	
 
 	def new
+
 	end
 
 	def create
+		
 		@user = User.create(user_params)
 		@user.password = "password123"
 		@user.password_confirmation = "password123"

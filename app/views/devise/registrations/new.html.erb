@@ -6,12 +6,16 @@
 
 <body>
 <h2>Sign up</h2>
+<%= @error %>
+<% if @error == true %>
+  <h2> You must fill out all required boxes before creating a new user! </h2>
+<% end %>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 <%= devise_error_messages! %> 
 
   <div class="field">
-    <%= f.label :first_name %><br />
+    <%= f.label :first_name %><br/>
     <%= f.text_field :first_name %>
   </div>
 
