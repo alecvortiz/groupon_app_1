@@ -32,10 +32,10 @@
 		<% else %>
 			<% if current_user.role == 'employee' %>
 				<% if @results.empty? %>
-					<h1><%= current_user.first_name %>, you do not have any appraisals at this time</h1>
+					<h1 class="alone"><%= current_user.first_name %>, you do not have any appraisals at this time</h1>
 				<% else %>
 					<h1>Your Appraisal Reports</h1>
-					<h2><%= @user.job_title %></h2>
+					<p><%= @user.first_name %> <%= @user.last_name %> - <%= @user.job_title %></p>
 				<% end %>
 			<% else %> 
 				<h1 class="alone">Hey <%= current_user.first_name %>!</h1>

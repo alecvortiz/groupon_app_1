@@ -21,9 +21,10 @@
       <ul class="nav navbar-nav">
 
       		<a class="navbar-brand" style="color:#82b548">GROUPPRAISAL</a>
+          <li><%= link_to 'Home', root_path %></li>
         	<% if current_user.role == 'admin' %>
         		
-        		<li><%= link_to 'Home', root_path %></li>
+        		
       			<li><%= link_to 'Roster', users_path %></li>
 
      			<li><%= link_to 'Send Forms' , welcome_sent_path, data: {confirm: "Are you sure you want to send this term's appraisal forms to all Groupon, South Africa employees?"} %></li>

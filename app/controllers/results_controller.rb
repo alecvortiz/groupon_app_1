@@ -16,6 +16,7 @@ end
 
 def new
   @user = User.find(params[:user_id])
+  @result = Result.new
 end
 
 
