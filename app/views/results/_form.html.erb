@@ -6,7 +6,7 @@
 	}
 </style>
 <div class="border-form-div-2">
-<%= form_for([@user, @user.results.build]) do |f| %>
+<%= simple_form_for([@user, @result]) do |f| %>
 
   <% if @result != nil %>
     <% if @result.errors.any? %>
@@ -21,22 +21,18 @@
     <% end %>
   <% end %>
 
-	<div class="field">
-    	<% quarter_array = ['Q1', 'Q2', 'Q3', 'Q4'] %>
- 		<h3 style="margin-bottom:-10px"><%= f.label :quarter %> </h3>
-     	 <%=f.select(:quarter, options_for_select(quarter_array), :include_blank => 'Please Select') %>
-  	</div>
-  	<div class="field">
-    	<% year_array = ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2025', '2026', '2027', '2028', '2029', '2030'] %>
- 		<h3 style="margin-bottom:-10px"><%= f.label :year %></h3> 
-     	 <%=f.select(:year, options_for_select(year_array), :include_blank => 'Please Select') %>
-  	</div>
-  	<div class="field">
-    	<h3 style="margin-bottom:-10px"><%= f.label :summary %></h3>
-    	<%= f.text_area :summary, size: "75x8" %>
-  	</div>
-  	<div class="field">
-  	 <%= f.submit "Submit", :class=>"btn btn-success form-sub-2" %>
-  	</div>
+<div class="field">
+  <%= f.input :quarter, collection: ['Q1', 'Q2', 'Q3', 'Q4'] %>
+</div>
+<div class="field">
+  <%= f.input :year, collection: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2025', '2026', '2027', '2028', '2029', '2030'] %>
+</div>
+<div class="field">
+  <%= f.input :summary %>
+</div>
+<div class="field">
+  <%= f.button :submit, "Update Appraisal", :class=>"btn btn-success form-sub-2" %>
+</div>
+
 <% end %>
 </div>
