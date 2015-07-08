@@ -15,5 +15,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :results
   validates_presence_of :first_name, :last_name, :job_title
-  validates :email, uniqueness: true
+  validates :email, presence: true, uniqueness: true
 end

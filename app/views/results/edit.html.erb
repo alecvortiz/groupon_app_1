@@ -2,7 +2,20 @@
 
 <%= simple_form_for([@user, @result]) do |f| %>
 
-<div class="field">
+    <% if @result.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@result.errors.count, "error") %> prohibited this user from being saved:</h2>
+        <ul>
+          <% @result.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+
+
+    <div class="field">
     	<% quarter_array = ['Q1', 'Q2', 'Q3', 'Q4'] %>
  		<h3 style="margin-bottom:-10px"><%= f.label :quarter %> </h3>
      	 <%=f.select(:quarter, options_for_select(quarter_array)) %>
