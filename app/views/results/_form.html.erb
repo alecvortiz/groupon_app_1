@@ -6,7 +6,7 @@
 	}
 </style>
 <div class="border-form-div-2">
-<%= simple_form_for([@user, @result]) do |f| %>
+<%= simple_form_for([@user, @user.results.build]) do |f| %>
 
   <% if @result != nil %>
     <% if @result.errors.any? %>
