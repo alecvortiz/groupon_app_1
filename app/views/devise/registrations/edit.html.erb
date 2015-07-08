@@ -1,57 +1,87 @@
 <style>
-  body{
-    text-align: center;
-    padding: 20px;
-  }
+   body{
+   text-align: center;
+   padding: 20px;
+   }
 </style>
-
 <body>
-
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <% if current_user.role == 'admin' %>
-
-    <div class="field">
-      <%= f.input :first_name %>
-    </div>
-
-    <div class="field">
-      <%= f.input :last_name %>
-    </div>
-
-   <div class="field">
-      <%= f.input :job_title, collection: ['Business Intelligence', 'Cape Town Sales Manager',  'Cape Town Sales', 'CEO', 'City Planner', 'City Planner Manager', 'CS', 'CS Manager', 'CS Team Leader', 'Durban Sales', 'Durban City Manager', 'Editorial', 'Editorial Manager', 'Finance', 'Finance Manager', 'Goods Administrator', 'Goods Manager', 'Goods Sales', 'HR Manager', 'Johannesburg Sales', 'Logistics', 'Logistics Manager', 'Pretoria Sales', 'Pretoria Sales Manager', 'Product Designer', 'PRM', 'PRM Manager', 'QA', 'Sales Manager', 'Strategic Accounts', 'Telesales', 'Telesales Manager', 'Travel', 'Business Intelligence Manager', 'Marketing Associate', 'Marketing Manager', 'Johannesburg Sales Manager', 'Strategic Accounts Manager', 'HR Trainer', 'HR Administrator'] %>
-    </div>
-  <% end %>
-
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.input :password %> <i>(leave blank if you don't want to change it)</i>
-  </div>
-
-  <div class="field">
-    <%= f.input :password_confirmation %>
-  </div>
-
-  <div class="field">
-    <%= f.input :current_password %> <i>(we need your current password to confirm your changes)</i>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-
-<%= link_to "Back", :back %>
-
+   <h2>Edit <%= resource_name.to_s.humanize %></h2>
+   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+   <%= devise_error_messages! %>
+   <% if current_user.role == 'admin' %>
+   <div class="col-lg-12">
+      <br>
+      <div class="row">
+         <div class="col-md-4 col-md-offset-4 text-left">
+            <%= f.label :first_name, class: "col-sm-6 control-label" %>
+            <div class="col-sm-6">
+               <%= f.password_field :first_name, autocomplete: "off", class: "form-control" %>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="col-lg-12">
+      <br>
+      <div class="row">
+         <div class="col-md-4 col-md-offset-4 text-left">
+            <%= f.label :job_title, class: "col-sm-6 control-label" %>
+            <div class="col-sm-6">
+               <%= f.select :job_title, titles: ['Business Intelligence', 'Cape Town Sales Manager',  'Cape Town Sales', 'CEO', 'City Planner', 'City Planner Manager', 'CS', 'CS Manager', 'CS Team Leader', 'Durban Sales', 'Durban City Manager', 'Editorial', 'Editorial Manager', 'Finance', 'Finance Manager', 'Goods Administrator', 'Goods Manager', 'Goods Sales', 'HR Manager', 'Johannesburg Sales', 'Logistics', 'Logistics Manager', 'Pretoria Sales', 'Pretoria Sales Manager', 'Product Designer', 'PRM', 'PRM Manager', 'QA', 'Sales Manager', 'Strategic Accounts', 'Telesales', 'Telesales Manager', 'Travel', 'Business Intelligence Manager', 'Marketing Associate', 'Marketing Manager', 'Johannesburg Sales Manager', 'Strategic Accounts Manager', 'HR Trainer', 'HR Administrator'], class: "form-control" %>
+            </div>
+         </div>
+      </div>
+   </div>
+   <% end %>
+   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+   <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+   <% end %>
+   <div class="col-lg-12">
+   <br>
+   <div class="row" >
+      <div class="col-md-4 col-md-offset-4 text-left">
+         <%= f.label :password, class: "col-sm-6 control-label" %>
+         <div class="col-sm-6">
+            <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+         </div>
+         <div class="col-sm-12 text-center">
+            <i>(leave blank if you don't want to change it)</i>
+         </div>
+      </div>
+       </div>
+   </div>
+   <div class="col-lg-12">
+   <br>
+   <div class="row" >
+      <div class="col-md-4 col-md-offset-4 text-left">
+         <%= f.label :password_confirmation, class: "col-sm-6 control-label" %>
+         <div class="col-sm-6">
+            <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+         </div>
+          </div>
+      </div>
+   </div>
+  <div class="col-lg-12">
+   <br>
+   <div class="row" >
+      <div class="col-md-4 col-md-offset-4 text-left">
+      <%= f.label :current_password, class: "col-sm-6 control-label" %>
+        <div class="col-sm-6">
+        <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
+         </div>
+         <div class="col-sm-12 text-center">
+         <i>(we need your current password to confirm your changes)</i>
+          </div>
+          </div>
+      </div>
+   </div>
+         
+   </div>
+  <div class="col-lg-12">
+   <br>
+      <%= f.submit "Update" %>
+   </div>
+   <% end %>
+      <div class="col-lg-12">
+   <br><%= link_to "Back", :back %>
+   </div>
 </body>
-
-
