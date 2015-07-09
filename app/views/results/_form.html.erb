@@ -1,38 +1,56 @@
 <style type="text/css">
-	.form-sub-2{
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-	}
+  .form-sub-2{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .field{
+    color: #82b548;
+    font-size: 20px;
+  }
+
+  textarea {
+    width: 30em;
+    height: 15em;
+}
+
 </style>
 <div class="border-form-div-2">
 <%= simple_form_for @result, url: user_results_path, method: :post do |f| %>
 
   <% if @result != nil %>
     <% if @result.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@result.errors.count, "error") %> prohibited this user from being saved:</h2>
+       <div class="alert alert-error alert-block"><button aria-hidden="true" class="close" data-dismiss="alert" type="button">×</button>
         <ul>
           <% @result.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-          <% end %>
+          <%= content_tag :li, msg, :id => "error_#{msg}" if msg.is_a?(String) %>
+      <% end %>
         </ul>
       </div>
     <% end %>
   <% end %>
+<b>
+        <div class="field">
+          <%= f.label :quarter %><br/>
+          </div>
+          <%= f.select :quarter, quarter: ['Q1', 'Q2', 'Q3', 'Q4'] %>
+        <br/> <br/>
+      
+        <div class="field">
+         <%= f.label :year %><br/>
+         </div>
+         <%= f.select :year, year: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2025', '2026', '2027', '2028', '2029', '2030'] %>
+        <br/> <br/>
 
-<div class="field">
-  <%= f.input :quarter, collection: ['Q1', 'Q2', 'Q3', 'Q4'] %>
-</div>
-<div class="field">
-  <%= f.input :year, collection: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2025', '2026', '2027', '2028', '2029', '2030'] %>
-</div>
-<div class="field">
-  <%= f.input :summary %>
-</div>
-<div class="field">
-  <%= f.button :submit, "Create Appraisal", :class=>"btn btn-success form-sub-2" %>
-</div>
+        <div class="field">
+         <%= f.label :summary %><br/>
+         </div>
+</b>
+         <%= f.text_area :summary %>
+        <br/> <br/>
+
+         <%= f.button :submit, "Create Appraisal", :class=>"btn btn-success form-sub-2" %>
+
 
 <% end %>
 </div>

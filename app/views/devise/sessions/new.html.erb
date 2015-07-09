@@ -1,35 +1,86 @@
 <style>
   body{
-    text-align: center;
+    
+  background: rgba(77,77,77,1);
+  background: -moz-radial-gradient(center, ellipse cover, rgba(77,77,77,1) 0%, rgba(74,74,74,1) 47%, rgba(0,0,0,1) 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(77,77,77,1)), color-stop(47%, rgba(74,74,74,1)), color-stop(100%, rgba(0,0,0,1)));
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(77,77,77,1) 0%, rgba(74,74,74,1) 47%, rgba(0,0,0,1) 100%);
+  background: -o-radial-gradient(center, ellipse cover, rgba(77,77,77,1) 0%, rgba(74,74,74,1) 47%, rgba(0,0,0,1) 100%);
+  background: -ms-radial-gradient(center, ellipse cover, rgba(77,77,77,1) 0%, rgba(74,74,74,1) 47%, rgba(0,0,0,1) 100%);
+  background: radial-gradient(ellipse at center, rgba(77,77,77,1) 0%, rgba(74,74,74,1) 47%, rgba(0,0,0,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4d4d4d', endColorstr='#000000', GradientType=1 );
+  background-attachment: fixed;
   }
+  .sign_in{
+    float:center;
+    background-color: rgba(255, 255, 255, .9);
+    display: block;
+    margin:auto;
+    border-radius: 20px;
+    border-color: #82b548;
+    border-width: 20px;
+    color: #82b548;
+   
+  }
+
+  .grouppraisal{
+    color:#82b548; 
+    font-family: 'Raleway' sans-serif; 
+    margin-top:65px; 
+    font-size: 50px;
+
+  }
+
+  .field{
+    font-size: 18px;
+    color:black;
+  }
+
 </style>
 
 <body>
 
-<h2>Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+<h1 class="grouppraisal">GROUPPRAISAL</h1>
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<div class="row vertical-center-row">
+  <div class="col-xs-4 col-xs-offset-4">
+
+    <div class="sign_in">
+
+    <b style="color:#82b548">
+      <h2>Log in</h2>
+
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="field">
+          <%= f.label :email %><br />
+    </b>
+          <%= f.email_field :email, autofocus: true %>
+        </div><br/>
+
+    <b style="color:#82b548">
+        <div class="field">
+          <%= f.label :password %><br />
+    </b>
+          <%= f.password_field :password, autocomplete: "off" %>
+        </div><br/>
+
+        <% if devise_mapping.rememberable? -%>
+          <div class="field">
+            <%= f.check_box :remember_me %>
+            <b style="color:#82b548"><%= f.label :remember_me %></b>
+          </div><br/>
+        <% end -%>
+
+        <div class="actions" style="padding-bottom:30px">
+          <b><%= f.submit "Log in", class: "btn btn-success" %></b>
+        </div>
+      <% end %>
     </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
+</div>
+</b>
 
 
 </body>
