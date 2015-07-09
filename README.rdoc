@@ -1,19 +1,39 @@
 == README
-Grouppraisal is an app designed to computerize the system of gathering and releasing appraisal information for Groupon and, as such, increase the efficiency of the process.
+Grouppraisal is an app designed to computerize the system of gathering and releasing appraisal information for Groupon and, as such, increase the efficiency of the process. This platform gives the administrators of appraisal process (The HR department) tools to conduct surveys and gather relevant data. All other employees will use Grouppraisal to view how managers, peers and subordinates have constuctively criticized their performance.
+
+Ask HR for the full tutorial of how to use the app (word doc) and the github info
+
+== Current Edition of Grouppraisal
 
 Admins are able to log on to the app and complete the following functions:
 1) Add employees/users to the site (when this happens the new employee is emailed with login info)
-2) Edit employees/users information (unless they are admins)
+2) Edit/delete employees/users information (unless they are admins)
 3) Edit their own profile
-4) View a list of all employees names + job titles + whether their appraisals for the specified quarter have been completed (and click a button in order to reset the quarter)
-5) Send emails to all employees with the necessary appraisal forms with the click of a button 
+4) View a list of all employees names + job titles + whether their appraisals for the specified quarter have been completed on the roster page (and click a "new quarter" button in order to reset the quarter and unclick all employees)
+*5) Send emails to all employees with the necessary appraisal forms with the click of a button (fully automated proccess where each employee reviews a manager, a peer, subordinates, and themselves) (most comlpex feature)
+	This feature utilizes the users_controller, user_mailer.rb file, and the sent.html.erb file
+	Arrays of employee jobs are created in order to randomly select one peer to fill out a form for. Each person reviews on peer and gets reviewed by one peer (if they have a peer) 
 6) View all employees' show pages
 7) Add new appraisals
-8) Edit existing appraisals
+8) Edit/delete existing appraisals
+*9) When surveys are filled out, all data is collected in google sheets under  grouponappraisals@gmail.com's account (password - iXperience) and sorted by each reviewee. 
 
-Employees log on to the app and can only see appraisals which have been posted. Additionally, they are able to edit their password. Employees recieve emails when appraisal forms are released and when their account has been created. 
+Employees log on to the app and can only see appraisals that have been posted. Additionally, they are able to edit their password. Employees receive emails when appraisal forms are released and when their account has been created. 
 
-Features we'd like to add:
-1) Employees recieve emails every time an appraisal is added to their show page
+Features we'd like to add to Grouppraisal software (for software development personnel):
+1) We want employees receive emails every time an appraisal is added to their show page by an admin
+2) When Russell has decided which metrics are important and how to correctly rate employees, we'd like graphs and/or charts to be automatically pulled from the google sheets and placed onto each employees show page (very challenging but would be awesome) 
+3) If not #2, then an option to manually upload graphs and charts and a comparison to the sector's average
+4) When the send button is clicked, it takes a few moments to load each and every email. A loading message (spinning wheel) that prevents from clicking out of this process is a necessary addition to the platform.
+5) Anything else that will make the appraisal process easier for the HR department (There is a lot of room for improvement)
+6) Maybe even a gamified system to encourage timely responses from employees?
+7) Make the "send forms" function less susceptible to errors and continuously check every possible form that can be sent 
+
+Features to be added the google Drive, there is a lot to do with this:
+1)Edit every appraisal form when Russell decides which questions he wants asked to each job-title
+*2)Completely format the response sheets (make them easy to read and easy to gather useful data based on the questions in the forms)
+3) Create algorithms in order to sum up certain metrics and make total employee score columns.
+4) Get creative, make Russell's life simple!
+
 
 
