@@ -10,6 +10,7 @@ Admins are able to log on to the app and complete the following functions:
 2) Edit/delete employees/users information (unless they are admins)
 3) Edit their own profile
 4) View a list of all employees names + job titles + whether their appraisals for the specified quarter have been completed on the roster page (and click a "new quarter" button in order to reset the quarter and unclick all employees)
+	Also can view how many more appraisal reports are needed to fill out
 *5) Send emails to all employees with the necessary appraisal forms with the click of a button (fully automated proccess where each employee reviews a manager, a peer, subordinates, and themselves) (most comlpex feature)
 	This feature utilizes the users_controller, user_mailer.rb file, and the sent.html.erb file
 	Arrays of employee jobs are created in order to randomly select one peer to fill out a form for. Each person reviews on peer and gets reviewed by one peer (if they have a peer) 
@@ -28,6 +29,7 @@ Features we'd like to add to Grouppraisal software (for software development per
 5) Anything else that will make the appraisal process easier for the HR department (There is a lot of room for improvement)
 6) Maybe even a gamified system to encourage timely responses from employees?
 7) Make the "send forms" function less susceptible to errors and continuously check every possible form that can be sent 
+8) add a cool favicon
 
 Features to be added the google Drive, there is a lot to do with this:
 1)Edit every appraisal form when Russell decides which questions he wants asked to each job-title
