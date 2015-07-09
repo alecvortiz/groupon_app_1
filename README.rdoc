@@ -1,28 +1,19 @@
 == README
+Grouppraisal is an app designed to computerize the system of gathering and releasing appraisal information for Groupon and, as such, increase the efficiency of the process.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Admins are able to log on to the app and complete the following functions:
+1) Add employees/users to the site (when this happens the new employee is emailed with login info)
+2) Edit employees/users information (unless they are admins)
+3) Edit their own profile
+4) View a list of all employees names + job titles + whether their appraisals for the specified quarter have been completed (and click a button in order to reset the quarter)
+5) Send emails to all employees with the necessary appraisal forms with the click of a button 
+6) View all employees' show pages
+7) Add new appraisals
+8) Edit existing appraisals
 
-Things you may want to cover:
+Employees log on to the app and can only see appraisals which have been posted. Additionally, they are able to edit their password. Employees recieve emails when appraisal forms are released and when their account has been created. 
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Features we'd like to add:
+1) Employees recieve emails every time an appraisal is added to their show page
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
