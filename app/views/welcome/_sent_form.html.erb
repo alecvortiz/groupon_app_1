@@ -1,19 +1,14 @@
 
 
-
-<article id="primary-content" class="animated fadeIn">
-
 <% julianne1 = User.find_by(email: 'jwalkk@umich.edu') %>
 <% sarah1 = User.find_by(email: 'sarah.besnainou@gmail.com') %>
 <% alec1 = User.find_by(email: 'aortiz2@stanford.edu') %>
 
 
+<% UserMailer.email(julianne1, @arr).deliver_now %>
+<% UserMailer.email(sarah1, @arr).deliver_now %>
 <% UserMailer.email(alec1, @arr).deliver_now %>
 
 
 <h1>All Emails are qued to send</h1>
-</article>
 
-
-
-	

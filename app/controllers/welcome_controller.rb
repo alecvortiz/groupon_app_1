@@ -194,9 +194,10 @@ class WelcomeController < ApplicationController
 
        @arr = [@bus_intel_arr, @ct_sales_arr, @CEO_arr, @city_planner_arr, @cs_arr, @durban_sales_arr, @editorial_arr, @finance_arr, @goods_administrator_arr, @johannesburg_sales_arr, @logistics_arr, @pretoria_sales_arr, @PRM_arr, @QA_arr, @strategic_accounts_arr, @telesales_arr, @travel_arr, @product_designer_arr, @cs_tl_arr, @goods_sales_arr, @logistics_manager_arr, @hr_admin_arr, @hr_trainer_arr, @marketing_arr] 
 
- 	
   end
 
+  def loading
 
+  end
   
 end
