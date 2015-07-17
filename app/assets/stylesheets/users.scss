@@ -17,7 +17,8 @@ h1{
 	padding-top: 60px;
 	padding-bottom: 20px;
 	text-align: center;
-	font-family: 'Roboto-Bold';
+	font-family: 'Roboto';
+	font-weight: 700;
 	color: black;
 }
 
@@ -34,6 +35,14 @@ h3{
 h4 {
 	padding-left: 15px;
 	padding-right: 15px;
+}
+h5 {
+	text-align: center;
+	font-family: 'Roboto';
+	font-weight: 700;
+	color: black;
+	font-size: 25pt;
+	padding-top: 20pt;
 }
 
 .roster{
