@@ -1,17 +1,18 @@
 <style>
 .alone {
 	font-size: 50pt;
+	position: relative;
+	bottom: 100px;
 }
 .manager {
 	background-image: url(../img/logo.jpg);
-	background-position: 50% 65%;
+	background-position: 50% 112%;
 	background-repeat: no-repeat;
-
+	background-size: 100%;
 }
 </style>
 <body>
 	<article id="primary-content" class="animated fadeIn">
-
 	<div class = "row">
 		<div class="col-xs-2">
 			<% if current_user.role == 'admin' %>
@@ -52,8 +53,10 @@
 						<p><%= @user.first_name %> <%= @user.last_name %> - <%= @user.job_title %></p>
 					<% end %>
 				<% else %> 
-					<h1 class="alone">Hey, <%= current_user.first_name %>!</h1>
-					<p><%= @user.job_title %></p>
+				<div class="manager">
+					<div class="alone">Hey, <%= current_user.first_name %>!
+					<p><%= @user.job_title %></p></div>
+				</div>
 				<% end %>
 			<% end %>
 		</div>
