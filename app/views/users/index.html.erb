@@ -1,33 +1,73 @@
+<style> 
+.group {
+	font-family: 'Roboto-Bold';
+	color: black;
+	font-size: 25pt;
+	text-align: left;
+}
+.list {
+	text-align: left;
+	font-family: Open Sans;
+	text-decoration: none;
+}
+
+.search {
+	text-align: left;
+}
+.button-location {
+	padding-top: 40pt;
+}
+a, a:hover, a:active, a:visited,
+a.people {
+	color: black;
+	text-decoration: none;
+}
+
+</style>
+<body>
 <article id="primary-content" class="animated fadeIn">
 
+<div class="container">
+	<div class="row">
+		<div class="col-md-9">
+			<h1 class="group">Groupon SA Roster, <%= @count %> more appraisals to fill out</h1>
+		</div>
+		<div class="col-md-3">
+			<div class="button-location">
+				<%= button_to 'New Quarter', reset_user_path, class: "btn btn-default",  :method => :get %>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3">
+			<div class="search" style="font-family:Open Sans">
+				<%= form_tag(users_path, :method => "get", id: "search-form") do %>
+	    		<b/>Search by Name or Job Title: <br />
+	    		<%= text_field_tag :search, params[:search], placeholder: "Search" %>
+	    		<%= submit_tag "Search", class: "btn btn-default-xs" %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		
+	</div>
 
-<h1>Groupon SA Roster, <%= @count %> more appraisals to fill out</h1>
-<%= button_to 'New Quarter', reset_user_path, class: "btn btn-success",  :method => :get %>
-<br/><br/>
 
-
-<%= form_tag(users_path, :method => "get", id: "search-form") do %>
-    <b/>Search by Name or Job Title: <br />
-    <%= text_field_tag :search, params[:search], placeholder: "Search" %>
-    <%= submit_tag "Search" %>
-<% end %>
-
-
-<br/><br/><br/>
-
-
-<% @users.each do |user| %>
-	
-		<p class ="roster" ><% name = user.first_name + " " + user.last_name %>
-		<a class ="people"><%= link_to name, user_path(user) %></a> - <font color=#1F221F><%= user.job_title %></font>
-		<% if user.check == true %></a>
-			<i class="fa fa-check-square-o" style="color:#82b548"></i> 
-		<% end %>
-		</p>
-	
-	
-
-<% end %>
+	<div class="row">
+		<div class="col-md-6">
+			<% @users.each do |user| %>
+				<div class="list">
+					<p class ="roster" style="color:rgba(91, 201, 124, 1)"><% name = user.first_name + " " + user.last_name %>
+					<a class ="people"><%= link_to name, user_path(user) %></a> - <font color=#1F221F><%= user.job_title %></font>
+					<% if user.check == true %></a>
+						<i class="fa fa-check-square-o"></i> 
+					<% end %>
+					</p></div>
+			<% end %>
+		</div>
+	</div>
 
 </article>
-
+</body>

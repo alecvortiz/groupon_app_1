@@ -1,79 +1,91 @@
-<article id="primary-content" class="animated fadeIn">
+<style>
+.alone {
+	font-size: 50pt;
+}
+.manager {
+	background-image: url(../img/logo.jpg);
+	background-position: 50% 65%;
+	background-repeat: no-repeat;
 
-<div class = "row">
-	<div class="col-xs-2">
-		<% if current_user.role == 'admin' %>
-			<% if @user.role == 'employee' %>
-				<div class = "delete"><%= button_to 'Edit Employee', edit_user_path(@user), class: "btn btn-danger",  :method => :get %>
-				</div>
-			<% end %>
-		<% end %> 
-	</div>
-	<div class="col-xs-8">
-		<% if current_user != @user %>
-			<% if @user.last_name[-1] != 's' %>
-				<h1>
-					<%= @user.first_name %> <%= @user.last_name %>'s Appraisal Reports
-					<% if @user.check == true %>
-						<%= link_to "<i class='fa fa-check-square-o' style='color:#82b548'></i>".html_safe , unclick_user_path(@user) %>
-					<% else %>
-					 	<%= link_to "<i class='fa fa-square-o' style='color:#82b548'></i>".html_safe , click_user_path(@user) %>
-					<% end %>
-				</h1> 
-				<p><%= @user.job_title %></p>
-				
-			<% else %>
-				<h1>
-					<%= @user.first_name %> <%= @user.last_name %>' Appraisal Reports
-					<% if @user.check == true %>
-						<%= link_to "<i class='fa fa-check-square-o' style='color:#82b548'></i>".html_safe , unclick_user_path(@user) %> 
-					<% end %>
-				</h1>
-				<p><%= @user.job_title %></p>
-			<% end %>
-		<% else %>
-			<% if current_user.role == 'employee' %>
-				<% if @results.empty? %>
-					<h1 class="alone"><%= current_user.first_name %>, you do not have any appraisals at this time</h1>
-				<% else %>
-					<h1>Your Appraisal Reports</h1>
-					<p><%= @user.first_name %> <%= @user.last_name %> - <%= @user.job_title %></p>
+}
+</style>
+<body>
+	<article id="primary-content" class="animated fadeIn">
+
+	<div class = "row">
+		<div class="col-xs-2">
+			<% if current_user.role == 'admin' %>
+				<% if @user.role == 'employee' %>
+					<div class = "delete"><%= button_to 'Edit Employee', edit_user_path(@user), class: "btn btn-danger",  :method => :get %>
+					</div>
 				<% end %>
-			<% else %> 
-				<h1 class="alone">Hey <%= current_user.first_name %>!</h1>
-				<p><%= @user.job_title %></p>
+			<% end %> 
+		</div>
+		<div class="col-xs-8">
+			<% if current_user != @user %>
+				<% if @user.last_name[-1] != 's' %>
+					<h1>
+						<%= @user.first_name %> <%= @user.last_name %>'s Appraisal Reports
+						<% if @user.check == true %>
+							<%= link_to "<i class='fa fa-check-square-o' style='color:black'></i>".html_safe , unclick_user_path(@user) %>
+						<% else %>
+						 	<%= link_to "<i class='fa fa-square-o' style='color:black'></i>".html_safe , click_user_path(@user) %>
+						<% end %>
+					</h1> 
+					<p style="color:black" style="font-family=Open Sans"><%= @user.job_title %></p>
+					
+				<% else %>
+					<h1>
+						<%= @user.first_name %> <%= @user.last_name %>' Appraisal Reports
+						<% if @user.check == true %>
+							<%= link_to "<i class='fa fa-check-square-o' style='color:black'></i>".html_safe , unclick_user_path(@user) %> 
+						<% end %>
+					</h1>
+					<p><%= @user.job_title %></p>
+				<% end %>
+			<% else %>
+				<% if current_user.role == 'employee' %>
+					<% if @results.empty? %>
+						<h1 class="alone"><%= current_user.first_name %>, you do not have any appraisals at this time</h1>
+					<% else %>
+						<h1>Your Appraisal Reports</h1>
+						<p><%= @user.first_name %> <%= @user.last_name %> - <%= @user.job_title %></p>
+					<% end %>
+				<% else %> 
+					<h1 class="alone">Hey, <%= current_user.first_name %>!</h1>
+					<p><%= @user.job_title %></p>
+				<% end %>
 			<% end %>
-		<% end %>
+		</div>
+		<div class="col-xs-2">
+			<% if current_user.role == 'admin' && @user != current_user %>
+				<div class = "add"> <%= button_to 'Add New Appraisal', new_user_result_path(@user), class: "btn btn-default",  :method => :get %>
+				</div>
+			<% end %> 
+		</div>
 	</div>
-	<div class="col-xs-2">
-		<% if current_user.role == 'admin' && @user != current_user %>
-			<div class = "add"> <%= button_to 'Add New Appraisal', new_user_result_path(@user), class: "btn btn-success",  :method => :get %>
-			</div>
-		<% end %> 
-	</div>
-</div>
 
 
-<% if !@results.empty? %>
+	<% if !@results.empty? %>
 
-	<% @results.each do |result| %>
-		<h2>
-			<%= result.quarter %> <%= result.year %>
-		</h2>
-		
-		<h3 style="color:black"><%= result.summary %> </h3>
-		<% if current_user.role == 'admin' %>
-			<%= link_to "<i class='fa fa-pencil fa-lg' style='color:#82b548'></i>".html_safe , edit_user_result_path(result.user_id, result),  :method => :get %>  &nbsp
-			<%= link_to "<i class='fa fa-trash-o fa-lg' style='color:#82b548'></i>".html_safe, user_result_path(result.user_id, result),  :method => :delete, data: {confirm: "Are you sure you want to delete this appraisal?"} %>
-		<% end %>
-		
-		<% if result != @results.last %>	
-			<hr/>
+		<% @results.each do |result| %>
+			<h2>
+				<%= result.quarter %> <%= result.year %>
+			</h2>
+			
+			<h3 style="color:black"><%= result.summary %> </h3>
+			<% if current_user.role == 'admin' %>
+				<%= link_to "<i class='fa fa-pencil fa-lg' style='color:black'></i>".html_safe , edit_user_result_path(result.user_id, result),  :method => :get %>  &nbsp
+				<%= link_to "<i class='fa fa-trash-o fa-lg' style='color:black'></i>".html_safe, user_result_path(result.user_id, result),  :method => :delete, data: {confirm: "Are you sure you want to delete this appraisal?"} %>
+			<% end %>
+			
+			<% if result != @results.last %>	
+				<hr/>
+			<% end %>
 		<% end %>
 	<% end %>
-<% end %>
-
 </article>
+</body>
 
 
 

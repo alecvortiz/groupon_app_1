@@ -1,3 +1,21 @@
+<style type="text/css">
+  .form-sub-2{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .field{
+    color: rgba(91, 201, 124, 1);
+    font-size: 20px;
+  }
+
+  textarea {
+    width: 30em;
+    height: 15em;
+}
+
+</style>
+
 <h1>Edit this appraisal:</h1>
 
 <%= simple_form_for([@user, @result]) do |f| %>
@@ -13,20 +31,29 @@
       </div>
     <% end %>
 
+  <b>
+        <div class="field">
+          <%= f.label :quarter %><br/>
+          </div>
+          <%= f.select :quarter, quarter: ['Q1', 'Q2', 'Q3', 'Q4'] %>
+        <br/> <br/>
+      
+        <div class="field">
+         <%= f.label :year %><br/>
+         </div>
+         <%= f.select :year, year: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2025', '2026', '2027', '2028', '2029', '2030'] %>
+        <br/> <br/>
 
+        <div class="field">
+         <%= f.label :summary %><br/>
+         </div>
+  </b>
+         <%= f.text_area :summary %>
+        <br/> <br/>
 
-    <div class="field">
-      <%= f.input :quarter, collection: ['Q1', 'Q2', 'Q3', 'Q4'] %>
-  	</div>
-  	<div class="field">
-      <%= f.input :year, collection: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2025', '2026', '2027', '2028', '2029', '2030'] %>
-  	</div>
-  	<div class="field">
-      <br><%= f.input :summary %>
-  	</div>
-  	<div class="field">
-  	 <%= f.button :submit, "Update Appraisal", :class=>"btn btn-success form-sub-2" %>
-  	</div>
+        <div class="field">
+          <%= f.button :submit, "Update Appraisal", :class=>"btn btn-default form-sub-2" %>
+        </div>
 
 <% end %>
 
