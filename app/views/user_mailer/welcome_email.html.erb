@@ -8,7 +8,7 @@
   </head>
 
   <body>
-    <font color=#82b548>
+    <font color=rgba(91, 201, 124, 1)>
     <h1>It's Appraisal Time <%= @user.first_name %>!</h1><br/>
     
 
@@ -24,7 +24,7 @@
           <%= @url_busintel_peer %><br/><br/>
         <% end %>
 
-        <font color=#82b548> Please assess your own performance </font> <br/><br/>
+        <font color=rgba(91, 201, 124, 1)> Please assess your own performance </font> <br/><br/>
         <%= @url_busintel_peer %><br/><br/>
     <% end %>
 
@@ -32,7 +32,7 @@
     <% if @user.job_title == 'Business Intelligence Manager' %>
       Fill this form out for all members of your Business Intelligence team<br/><br/>
       <%= @url_busintel_supervisor %><br/><br/>
-        <font color=#82b548> Please assess your own performance </font><br/><br/>
+        <font color=rgba(91, 201, 124, 1)> Please assess your own performance </font><br/><br/>
       <%= @url_busintel_manager_peer %><br/><br/>
     <% end %>
 
@@ -42,7 +42,7 @@
       <%= @url_sales_manager_subordinate %><br/><br/>
       Fill this form out for all members of your sales team<br/><br/>
       <%= @url_ct_sales_supervisor %><br/><br/>
-      <font color=#82b548> Please assess your own performance</font><br/><br/>
+      <font color=rgba(91, 201, 124, 1)> Please assess your own performance</font><br/><br/>
       <%= @url_ct_sales_manager_peer %><br/><br/>
     <% end %>
 
@@ -56,7 +56,7 @@
         <%= @url_ct_sales_peer %><br/><br/>
       <% end %>
 
-      <font color=#82b548> Please assess your own performance</font><br/><br>
+      <font color=rgba(91, 201, 124, 1)> Please assess your own performance</font><br/><br>
       <%= @url_ct_sales_peer %><br/><br/>
     <% end %>
 
@@ -64,7 +64,7 @@
     <% if @user.job_title == 'City Planner Manager' %>
       Fill this form out for all members of your City Planning team<br/><br/>
       <%= @url_city_planner_supervisor %><br/><br/>
-      <font color=#82b548> Please assess your own performance </font><br/><br/>
+      <font color=rgba(91, 201, 124, 1)> Please assess your own performance </font><br/><br/>
       <%= @url_city_planner_manager_peer %><br/><br/>
     <% end %>
 
@@ -78,7 +78,7 @@
         <%= @url_city_planner_peer %><br/><br/>
       <% end %>
 
-      <font color=#82b548> Please assess your own performance </font><br/><br/>
+      <font color=rgba(91, 201, 124, 1)> Please assess your own performance </font><br/><br/>
       <%= @url_city_planner_peer %><br/><br/>
     <% end %>
 
@@ -93,7 +93,7 @@
         <%= @url_CS_peer %><br/><br/>
       <% end %>
 
-      <font color=#82b548>Please assess your own performance</font><br/><br/>
+      <font color=rgba(91, 201, 124, 1)>Please assess your own performance</font><br/><br/>
       <%= @url_CS_peer %><br/><br/>
     <% end %>
 
@@ -111,7 +111,7 @@
         <%= @url_CS_team_leader_peer %><br/><br/>
       <% end %>
 
-      <font color=#82b548>Please assess your own performance</font><br/><br/>
+      <font color=rgba(91, 201, 124, 1)>Please assess your own performance</font><br/><br/>
       <%= @url_CS_team_leader_peer %><br/><br/>
     <% end %>
 
@@ -120,7 +120,7 @@
     <% if @user.job_title == 'CS Manager' %>
       Please fill this form out for all CS team leaders<br/><br/>
       <%= @url_CS_tl_supervisor %><br/><br/>
-      <font color=#82b548>Please assess your own performance</font><br/><br/>
+      <font color=rgba(91, 201, 124, 1)>Please assess your own performance</font><br/><br/>
       <%= @url_CS_manager_peer %><br/><br/>
     <% end %>
     
@@ -137,7 +137,7 @@
         <%= @url_durban_sales_peer %><br/><br/>
       <% end %>
 
-      <font color=#82b548>Please asses your own performance</font><br/><br/>
+      <font color=rgba(91, 201, 124, 1)>Please asses your own performance</font><br/><br/>
       <%= @url_durban_sales_peer %><br/><br/>
     <% end %>
 
@@ -168,7 +168,7 @@
         <%= @url_editorial_peer %><br/><br/>
       <% end %>
 
-      <font color=#82b548>Please assess your own performance</font><br/><br/>
+      <font color=rgba(91, 201, 124, 1)>Please assess your own performance</font><br/><br/>
       <%= @url_editorial_peer %><br/><br/>
     <% end %>
 
@@ -176,7 +176,7 @@
     <% if @user.job_title == 'Editorial Manager' %>
       Fill this form out for all members of your editorial team<br/><br/>
       <%= @url_editorial_supervisor %><br/><br/>
-      <font color=#82b548>Please assess your own performance</font><br/><br/>
+      <font color=rgba(91, 201, 124, 1)>Please assess your own performance</font><br/><br/>
       <%= @url_editorial_manager_peer %><br/><br/>
     <% end %>
 
@@ -192,7 +192,7 @@
         <%= @url_finance_peer %><br/><br/>
       <% end %>
 
-      <font color=#82b548>Please assess your own performance</font><br/><br/>
+      <font color=rgba(91, 201, 124, 1)>Please assess your own performance</font><br/><br/>
       <%= @url_finance_peer %><br/><br/>
     <% end %>
 
@@ -200,7 +200,7 @@
     <% if @user.job_title == 'Finance Manager' %>
       Fill this form out for all members of your finance team<br/><br/>
       <%= @url_finance_supervisor %><br/><br/>
-      <font color=#82b548> Please assess your own performance </font><br/><br/>
+      <font color=rgba(91, 201, 124, 1)> Please assess your own performance </font><br/><br/>
       <%= @url_finance_manager_peer %><br/><br/>
     <% end %>
 
@@ -215,7 +215,7 @@
         <%= @url_goods_admin_peer %><br/><br/>
       <% end %>
 
-        <font color=#82b548> Please assess your own performance </font><br/><br/>
+        <font color=rgba(91, 201, 124, 1)> Please assess your own performance </font><br/><br/>
         <%= @url_goods_admin_peer %><br/><br/>
     <% end %>
 
@@ -230,7 +230,7 @@
         <%= @url_goods_sales_peer %><br/><br/>
       <% end %>
 
-        <font color=#82b548> Please assess your own performance </font><br/><br/>
+        <font color=rgba(91, 201, 124, 1)> Please assess your own performance </font><br/><br/>
         <%= @url_goods_sales_peer %><br/><br/>
     <% end %>
 
@@ -240,7 +240,7 @@
       <%= @url_goods_admin_supervisor %><br/><br/>
       Please fill this form out for all members of your goods sales team<br/><br/>
       <%= @url_goods_sales_supervisor %><br/><br/>
-      <font color=#82b548> Please assess your own performance</font><br/><br/>
+      <font color=rgba(91, 201, 124, 1)> Please assess your own performance</font><br/><br/>
       <%= @url_goods_manager_peer %><br/><br/>
     <% end %>
 
@@ -257,7 +257,7 @@
         <%= @url_johannesburg_sales_peer %><br/><br/>
       <% end %>
 
-      <font color=#82b548>Please assess your own performance</font><br/><br/>
+      <font color=rgba(91, 201, 124, 1)>Please assess your own performance</font><br/><br/>
       <%= @url_johannesburg_sales_peer %><br/><br/>
     <% end %>
 
@@ -267,7 +267,7 @@
       <%= @url_sales_manager_subordinate %><br/><br/>
       Fill this form out for all members of your sales team<br/><br/>
       <%= @url_johannesburg_sales_supervisor %><br/><br/>
-      <font color=#82b548>Please assess your own performance</font><br/><br/>
+      <font color=rgba(91, 201, 124, 1)>Please assess your own performance</font><br/><br/>
       <%= @url_johannesburg_sales_manager_peer %><br/><br/>
     <% end %>
 
@@ -283,7 +283,7 @@
         <%= @url_logistics_peer %><br/><br/>
       <% end %>
 
-      <font color=#82b548>Please assess your own performance</font><br/><br/>
+      <font color=rgba(91, 201, 124, 1)>Please assess your own performance</font><br/><br/>
       <%= @url_logistics_peer %><br/><br/>
     <% end %>
 
@@ -299,7 +299,7 @@
         <%= @url_logistics_manager_peer %><br/><br/>
       <% end %>
 
-      <font color=#82b548>Please assess your own performance</font><br/><br/>
+      <font color=rgba(91, 201, 124, 1)>Please assess your own performance</font><br/><br/>
       <%= @url_logistics_manager_peer %><br/><br/>
     <% end %>
 
@@ -314,7 +314,7 @@
         <%= @url_pretoria_sales_peer %><br/><br/>
       <% end %>
 
-      <font color=#82b548>Please assess your own performance</font><br/><br/>
+      <font color=rgba(91, 201, 124, 1)>Please assess your own performance</font><br/><br/>
       <%= @url_pretoria_sales_peer %><br/><br/>
     <% end %>
 
@@ -324,7 +324,7 @@
       <%= @url_sales_manager_subordinate %><br/><br/>
       Please fill this form out for all members of your sales team<br/><br/>
       <%= @url_pretoria_sales_supervisor %><br/><br/>
-      <font color=#82b548>Please assess your own performance</font><br/><br/>
+      <font color=rgba(91, 201, 124, 1)>Please assess your own performance</font><br/><br/>
       <%= @url_pretoria_sales_manager_peer %><br/><br/>
     <% end %>
 
@@ -336,7 +336,7 @@
         <%= @url_product_designer_peer %><br/><br/>
       <% end %>
 
-      <font color=#82b548> Please assess your own performance</font><br/><br/>
+      <font color=rgba(91, 201, 124, 1)> Please assess your own performance</font><br/><br/>
       <%= @url_product_designer_peer %><br/><br/>
 
     <% end %>
@@ -352,7 +352,7 @@
         <%= @url_PRM_peer %><br/><br/>
       <% end %>
 
-      <font color=#82b548>Please assess your own performance</font><br/><br/>
+      <font color=rgba(91, 201, 124, 1)>Please assess your own performance</font><br/><br/>
       <%= @url_PRM_peer %><br/><br/>
     <% end %>
 
@@ -361,7 +361,7 @@
       <%= @url_PRM_supervisor %><br/><br/>
       Please fill this form out for all members of your QA team<br/><br/>
       <%= @url_QA_supervisor %><br/><br/>
-      <font color=#82b548>Please assess your own performance</font><br/><br/>
+      <font color=rgba(91, 201, 124, 1)>Please assess your own performance</font><br/><br/>
       <%= @url_PRM_manager_peer %><br/><br/>
     <% end %>
 
@@ -376,7 +376,7 @@
         <%= @url_QA_peer %><br/><br/>
       <% end %>
 
-      <font color=#82b548>Please assess your own performance</font><br/><br/>
+      <font color=rgba(91, 201, 124, 1)>Please assess your own performance</font><br/><br/>
       <%= @url_QA_peer %><br/><br/>
     <% end %>
 
@@ -394,7 +394,7 @@
       Please fill out this form for the Johannesburg Sales Manager <br/><br/>
       <%= @url_johannesburg_sales_manager_supervisor %><br/><br/>
       <% end %>
-      <font color=#82b548>Please assess your own performance</font><br/><br/>
+      <font color=rgba(91, 201, 124, 1)>Please assess your own performance</font><br/><br/>
       <%= @url_sales_manager_peer %><br/><br/>
     <% end %>
 
@@ -410,7 +410,7 @@
         <%= @url_strategic_accounts_peer %><br/><br/>
       <% end %>
 
-        <font color=#82b548>Please assess your own performance</font><br/><br/>
+        <font color=rgba(91, 201, 124, 1)>Please assess your own performance</font><br/><br/>
         <%= @url_strategic_accounts_peer %><br/><br/> 
     <% end %>
 
@@ -418,7 +418,7 @@
     <% if @user.job_title == 'Strategic Accounts Manager' %>
       Fill this form out for all members of your strategic accounts team<br/>
       <%= @url_strategic_accounts_supervisor %><br/><br/>
-      <font color=#82b548>Please assess your own performance</font><br/><br/>
+      <font color=rgba(91, 201, 124, 1)>Please assess your own performance</font><br/><br/>
       <%= @url_strategic_accounts_manager_peer %><br/><br/>
     <% end %>
 
@@ -433,7 +433,7 @@
         <%= @url_telesales_peer %><br/><br/>
       <% end %>
 
-      <font color=#82b548>Please assess your own performance</font><br/><br/>
+      <font color=rgba(91, 201, 124, 1)>Please assess your own performance</font><br/><br/>
       <%= @url_telesales_peer %><br/><br/>
     <% end %>
 
@@ -442,7 +442,7 @@
       <%= @url_sales_manager_subordinate %><br/><br/>
       Please fill this form out for all members of your telesales team<br/><br/>
       <%= @url_telesales_supervisor %><br/><br/>
-      <font color=#82b548>Please assess your own performance</font><br/><br/>
+      <font color=rgba(91, 201, 124, 1)>Please assess your own performance</font><br/><br/>
       <%= @url_telesales_manager_peer %><br/><br/>
     <% end %>
 
@@ -454,7 +454,7 @@
         <%= @url_travel_peer %><br/><br/>
       <% end %>
 
-      <font color=#82b548>Please assess your own performance</font><br/><br/>
+      <font color=rgba(91, 201, 124, 1)>Please assess your own performance</font><br/><br/>
       <%= @url_travel_peer %><br/><br/>
     <% end %>
 
@@ -469,7 +469,7 @@
         <%= @url_hr_admin_peer %><br/><br/>
       <% end %>
 
-      <font color=#82b548>Please assess your own performance</font><br/><br/>
+      <font color=rgba(91, 201, 124, 1)>Please assess your own performance</font><br/><br/>
       <%= @url_hr_admin_peer %><br/><br/>
     <% end %>
 
@@ -485,7 +485,7 @@
         <%= @url_hr_trainer_peer %><br/><br/>
       <% end %>
 
-      <font color=#82b548>Please assess your own performance</font><br/><br/>
+      <font color=rgba(91, 201, 124, 1)>Please assess your own performance</font><br/><br/>
       <%= @url_hr_trainer_peer %><br/><br/>
     <% end %>
 
@@ -495,7 +495,7 @@
       <%= @url_hr_admin_supervisor %><br/><br/>
       Fill this form out for all members of your HR Trainer team<br/><br/>
       <%= @url_hr_trainer_supervisor %><br/><br/>
-      <font color=#82b548>Please assess your own performance</font><br/><br/>
+      <font color=rgba(91, 201, 124, 1)>Please assess your own performance</font><br/><br/>
       <%= @url_hr_manager_peer %><br/><br/>
     <% end %>
 
@@ -511,7 +511,7 @@
         <%= @url_marketing_peer %><br/><br/>
       <% end %>
 
-      <font color=#82b548>Please assess your own performance</font><br/><br/>
+      <font color=rgba(91, 201, 124, 1)>Please assess your own performance</font><br/><br/>
       <%= @url_marketing_peer %><br/><br/>
     <% end %>
 
@@ -519,7 +519,7 @@
     <% if @user.job_title == 'Marketing Manager' %>
       Fill this form out for all members of your Marketing team<br/><br/>
       <%= @url_marketing_supervisor %><br/><br/>
-      <font color=#82b548>Please assess your own performance</font><br/><br/>
+      <font color=rgba(91, 201, 124, 1)>Please assess your own performance</font><br/><br/>
       <%= @url_marketing_manager_peer %><br/><br/>
     <% end %>
 
