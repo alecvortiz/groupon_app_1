@@ -7,10 +7,10 @@
 
 
 development: 
-  adapter: sqlite3
+  adapter: postgresql
   pool: 5
   timeout: 5000
-  database: dc/development.sqlite3
+  database: myapp_development
 
 production:
   adapter: postgresql
@@ -27,3 +27,9 @@ test:
   pool: 5
   username: student
   password: password
+
+default: &default
+      adapter: postgresql
+      encoding: unicode
+      pool: 5
+      timeout: 5000

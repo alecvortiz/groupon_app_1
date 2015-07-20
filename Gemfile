@@ -5,6 +5,8 @@ gem 'nokogiri'
 gem 'twitter-bootstrap-rails'
 gem 'devise'
 gem 'seed_dump'
+
+
 #for error messages
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
@@ -46,7 +48,6 @@ gem 'sendgrid'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-	gem 'sqlite3'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
